@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Navbar */
+.nav-link {
+    font-family: Roboto;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right: 32px;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    margin-right: 32px;
+}
+
+.nav-link:hover:after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid #FFFF;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+}
+
+.btn-login {
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 40px;
+    background-color: #FFFF;
+    border: none;
+}
+
+.btn-login:hover {
+    background-color: #FFFF;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.hero-area {
+    max-height: 590px;
+}
+
+.head-title {
+    margin-top: 230px;
+    text-transform: uppercase;
+}
+
+.logo-home {
+    margin-top: 90px;
+}
+
+.waves {
+    z-index: -100;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.logo-about {
+    margin-top: -50px;
+    margin-left: 70px;
+}
+
+.size-icon {
+    font-size: 80px;
+    color:#0d6efd ;
+}
+
+#integral img {
+    height: 50%;
+    width: 60%;
+}
+
+.size-card {
+    height: 400px;
+}
