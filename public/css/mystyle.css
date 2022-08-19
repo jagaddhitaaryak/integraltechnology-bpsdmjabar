@@ -1,6 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 /* Navbar */
+body {
+    overflow: visible;
+}
+
 .nav-link {
     font-family: Roboto;
     font-weight: 500;
@@ -14,9 +18,9 @@
 }
 
 .nav-link:hover:after {
-    content: '';
+    content: "";
     display: block;
-    border-bottom: 3px solid #FFFF;
+    border-bottom: 3px solid #ffff;
     width: 50%;
     margin: auto;
     padding-bottom: 5px;
@@ -27,12 +31,12 @@
     font-weight: 500;
     text-transform: uppercase;
     border-radius: 40px;
-    background-color: #FFFF;
+    background-color: #ffff;
     border: none;
 }
 
 .btn-login:hover {
-    background-color: #FFFF;
+    background-color: #ffff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -58,13 +62,13 @@
 }
 
 .logo-about {
-    margin-top: -50px;
+    /* margin-top: -50px; */
     margin-left: 70px;
 }
 
 .size-icon {
     font-size: 80px;
-    color:#0d6efd ;
+    color: #0d6efd;
 }
 
 #integral img {
@@ -75,3 +79,4 @@
 .size-card {
     height: 400px;
 }
+
