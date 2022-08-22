@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('login', [
+    return view('front/login', [
         "title" => "Login"
     ]);
 });
@@ -28,5 +28,11 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('dashboard', [
         "title" => "Dashboard"
+    ]);
+});
+
+Route::get('/eservices', function () {
+    return view('dashboard/sidebar', [
+        "title" => "E-services"
     ]);
 });
