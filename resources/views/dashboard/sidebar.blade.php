@@ -57,13 +57,15 @@
                                             <div class="input-group mb-3 mt-3">
                                                 <input type="text" class="form-control" placeholder="Nama Kegiatan" aria-label="Nama Kegiatan" width="50%">
                                             </div>
-                                            <!-- Jadwal Kegiatan -->
-                                            <div class="input-group mb-3 mt-3">
-                                                <input type="text" class="form-control" placeholder="Jadwal Kegiatan" aria-label="Jadwal Kegiatan" width="50%">
-                                            </div>
                                             <!-- Jumlah Peserta -->
                                             <div class="input-group mb-3 mt-3">
                                                 <input type="text" class="form-control" placeholder="Jumlah Peserta" aria-label="Jumlah Peserta" width="50%">
+                                            </div>
+                                            <!-- Jadwal Kegiatan -->
+                                            <label for="formFile" class="form-label">Jadwal Kegiatan</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputGroupFile02">
+                                                <label class="input-group-text" for="inputGroupFile02"><i class="fa-solid fa-upload"></i></label>
                                             </div>
                                             <!-- Upload Data Peserta -->
                                             <label for="formFile" class="form-label">Upload Data Peserta</label>
@@ -264,10 +266,75 @@
                             </div>
                         
                         <!-- Multimedia -->
-                        <div class="tab-pane fade" id="list-multimedia" role="tabpanel" aria-labelledby="list-multimedia-list">...</div>
-                        
+                        <div class="tab-pane fade" id="list-multimedia" role="tabpanel" aria-labelledby="list-multimedia-list">
+                            <section class="container">
+                                <form>
+                                <img src="/img/multimedia.png" alt="" width="30%" height="30%">
+                                    <div class="row form-group">
+                                        <div class="col-sm-8">   
+                                            <!-- Date -->
+                                            <div class="input-group date" id="multimedia" >
+                                                <input type="text" class="form-control" placeholder="Tanggal">
+                                                <span class="input-group-append">
+                                                    <span class="input-group-text bg-white d-block">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <!-- Nama Kegiatan -->
+                                            <div class="input-group mb-3 mt-3">
+                                                <input type="text" class="form-control" placeholder="Nama Kegiatan" aria-label="Nama Kegiatan" width="50%">
+                                            </div>
+                                            <!-- Link Video -->
+                                            <div class="input-group mb-3 mt-3">
+                                                <input type="text" class="form-control" placeholder="Link Video" aria-label="Link Video" width="50%">
+                                            </div>
+                                            <button type="button" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+
                         <!-- Publikasi -->
-                        <div class="tab-pane fade" id="list-publikasi" role="tabpanel" aria-labelledby="list-publikasi-list">...</div>
+                        <div class="tab-pane fade" id="list-publikasi" role="tabpanel" aria-labelledby="list-publikasi-list">
+                            <section class="container">
+                                <form>
+                                <img src="/img/publikasi.png" alt="" width="30%" height="30%">
+                                    <div class="row form-group">
+                                        <div class="col-sm-8">   
+                                            <!-- Date -->
+                                            <div class="input-group date" id="publikasi" >
+                                                <input type="text" class="form-control" placeholder="Tanggal">
+                                                <span class="input-group-append">
+                                                    <span class="input-group-text bg-white d-block">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <!-- Nama Kegiatan -->
+                                            <div class="input-group mb-3 mt-3">
+                                                <input type="text" class="form-control" placeholder="Nama Kegiatan" aria-label="Nama Kegiatan" width="50%">
+                                            </div>
+                                            <!-- Judul Flyer -->
+                                            <div class="input-group mb-3 mt-3">
+                                                <input type="text" class="form-control" placeholder="Link Video" aria-label="Link Video" width="50%">
+                                            </div>
+                                            <!-- Link Publikasi Internal -->
+                                            <div class="input-group mb-3 mt-3">
+                                                <input type="text" class="form-control" placeholder="Link Publikasi Internal" aria-label="Link Publikasi Internal" width="50%">
+                                            </div>
+                                            <!-- Link Publikasi External -->
+                                            <div class="input-group mb-3 mt-3">
+                                                <input type="text" class="form-control" placeholder="Link Publikasi External" aria-label="Link Publikasi External" width="50%">
+                                            </div>
+                                            <button type="button" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -302,6 +369,18 @@
 <script type="text/javascript">
     $(function() {
         $('#sertifikasi').datepicker();
+    });
+</script>
+<!-- Date Multimedia -->
+<script type="text/javascript">
+    $(function() {
+        $('#multimedia').datepicker();
+    });
+</script>
+<!-- Date Publikasi -->
+<script type="text/javascript">
+    $(function() {
+        $('#publikasi').datepicker();
     });
 </script>
 <script src="https://kit.fontawesome.com/848026e0b0.js" crossorigin="anonymous"></script>
