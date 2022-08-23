@@ -31,7 +31,7 @@ Route::get('/dashboard', function () {
     ]);
 });
 
-Route::get('/eservices', function () {
+Route::get('/sidebar', function () {
     return view('dashboard/sidebar', [
         "title" => "E-services"
     ]);
