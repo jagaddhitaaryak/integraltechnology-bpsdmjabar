@@ -71,12 +71,35 @@ body {
     color: #0d6efd;
 }
 
-#integral img {
-    height: 50%;
-    width: 60%;
+#integral img{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.index-post {
+    width: 1124px; transition: all 1.5s;
+    height: 364px; overflow: hidden; 
+    margin: auto;
+    display: block;
+    margin-top: 10%;
 }
 
-.size-card {
-    height: 400px;
+.shadow {
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.shadow:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+    border: solid 1.5px rgb(138, 8, 8);
+    display: flex;
+}
+
+
+@media screen and (max-width:1124px){
+    .hero-area {
+        max-height: 1124px;
+    }
 }
 
