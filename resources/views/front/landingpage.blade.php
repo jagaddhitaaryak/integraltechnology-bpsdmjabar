@@ -39,9 +39,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Kontak</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-dark btn-login text-primary" href="/login">LOGIN</a>
-                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <a class="btn btn-dark btn-login text-primary" href="/logout">Logout</a>
+                            </form>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="btn btn-dark btn-login text-primary" href="/login">LOGIN</a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>
