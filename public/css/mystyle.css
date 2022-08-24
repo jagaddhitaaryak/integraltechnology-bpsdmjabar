@@ -103,3 +103,23 @@ body {
     }
 }
 
+@media screen and (max-width:562px){
+    .container-card{
+        margin: 0px 50px;
+        padding: 30px 30px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+    .home-margin {
+        margin-top: -140px;
+        text-align: justify;
+    }
+    .m-img {
+        margin-top: 40px;
+        justify-content: center;
+    }
+}
+
+
