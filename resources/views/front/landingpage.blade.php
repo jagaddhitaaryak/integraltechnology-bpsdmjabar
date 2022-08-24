@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/mystyle.css">
+    <link rel="stylesheet" href="/js/scripts.js">
     <link rel="shortcut icon" href="/img/integral-putih.png">
     
 </head>
@@ -18,7 +19,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="#">
                 <img src="img/logo-integral.png" alt="" width="100" height="65">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,6 +44,7 @@
                     </li>
                 </ul>
             </div>
+        </div>
     </nav>
     <!-- TUTUP NAVBAR -->
 
@@ -50,13 +52,13 @@
     <div class="container">
         
     </div>
-    <section id="home" class="bg-primary hero-area">
+    <section id="home" class="bg-primary hero-area section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
                     <img src="/img/home.png" alt="" width="70%" height="90%" class="logo-home">
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5 home-margin">
                     <h2 class="head-title text-light">Integral Technology</h2>
                     <p class="text-light fs-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et ex hic aperiam asperiores maiores dolore eveniet eligendi in reiciendis unde consequatur est officiis, ipsa odit qui cumque necessitatibus laboriosam iste.</p>
                 </div>
@@ -72,7 +74,7 @@
     <!-- TUTUP HOME -->
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -80,7 +82,7 @@
                     <p class="fs-5 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi at dolorum, laboriosam aliquid, perspiciatis in tempora quis nulla architecto eveniet doloribus corporis incidunt vitae? Soluta, animi provident officia pariatur sequi illo error accusantium hic magnam ipsa sit, id doloremque? Vero, omnis possimus tenetur laborum ratione dicta explicabo aspernatur consequuntur eaque.</p>
                 </div>
                 <div class="col-lg-5">
-                    <img src="/img/about.png" alt="" width="70%" height="90%" class="logo-about">
+                    <img src="/img/about.png" alt="" width="70%" height="90%" class="logo-about m-img">
                 </div>
             </div>
         </div>
@@ -92,14 +94,14 @@
 
     <!-- INTEGRAL -->
 
-    <section id="integral" class="bg-primary" height="600px">
+    <section id="integral" class="bg-primary section-padding" height="600px">
         <div class="container-card">
             <div class="row row-cols-1 row-cols-md-3 justify-content-center">
                 <div class="col-lg-2">
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/cc.png" class="card-img-top" alt="..." style="display:block; margin:auto;">
                         <div class="card-body">
-                            <h5 class="card-title fs-5">Integral E-Service</h5>
+                            <h5 class="card-title fs-5"><span style="color: #18a3b8;">Integral</span> E-Service</h5>
                             <p class="card-text fw-light">Memproses layanan administrasi penyelenggaraan pelatihan mulai dari registrasi sampai dangan sertifikasi.</p>
                         </div>
                     </div>
@@ -109,7 +111,7 @@
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/ee.png" class="card-img-top" alt="..." style="display:block; margin:auto;">
                         <div class="card-body">
-                            <h5 class="card-title">Integral Publikasi</h5>
+                            <h5 class="card-title"><span style="color: #18a3b8;">Integral</span> Publikasi</h5>
                             <p class="card-text fw-light">Mempublikasikan informasi terkait kegiatan BPSDM, serta infomasi lainnya yang berhubungan dengan pengembangan SDM skala Nasional dan Internasional secara elektronik dan media cetak.</p>
                         </div>
                     </div>
@@ -119,7 +121,7 @@
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/bb.png" class="card-img-top" alt="..." style="display:block; margin:auto;">
                         <div class="card-body">
-                            <h5 class="card-title">Integral Big Data</h5>
+                            <h5 class="card-title"><span style="color: #18a3b8;">Integral</span> Big Data</h5>
                             <p class="card-text fw-light">Menghimpun data keseluruhan aktifitas yang ada di BPSD.</p>
                         </div>
                     </div>
@@ -128,7 +130,7 @@
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/aa.png" class="card-img-top" alt="..." style="display:block; margin:auto;">  
                         <div class="card-body">
-                            <h5 class="card-title">Integral Aplikasi</h5>
+                            <h5 class="card-title"><span style="color: #18a3b8;">Integral</span> Aplikasi</h5>
                             <p class="card-text fw-light">Mengelola, memfasilitasi dan menerapkan aplikasi-aplikasi untuk mendukung proses learning secara mudah, lancar dan tersampaikan dengan baik.</p>
                         </div>
                     </div>
@@ -137,7 +139,7 @@
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/dd.png" class="card-img-top" alt="..." style="display:block; margin:auto;">
                         <div class="card-body">
-                            <h5 class="card-title">Integral Multimedia</h5>
+                            <h5 class="card-title"><span style="color: #18a3b8;">Integral</span> Multimedia</h5>
                             <p class="card-text fw-light">Mendokumentasian setiap kegiatan BPSDM,e Sertifikat, pembuatan video bahan ajar Widyaiswara, serta pembuatan konten publikasi.</p>
                         </div>
                     </div>
@@ -147,11 +149,11 @@
     </section>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="#0d6efd" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,202.7C640,203,800,117,960,101.3C1120,85,1280,139,1360,165.3L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
-    </svg> -->
+    </svg>
     <!-- TUTUP ITEGRAL
 
     <-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="section-padding">
         <div class="container text-center">
             <h2 class="head-tittle pb-5">Kontak</h2>
             <div class="row">
@@ -199,13 +201,10 @@
     <!-- AKHIR FOOTER -->
 
 
-
-
-
-
-
     <!-- SCRIPT -->
     <script src="https://kit.fontawesome.com/848026e0b0.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery.min.js"></script>
     <!-- TUTUP SCRIPT -->
 </body>
 
