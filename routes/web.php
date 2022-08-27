@@ -20,12 +20,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/login', function () {
-    return view('front/login', [
-        "title" => "Login"
-    ]);
-});
-
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth');
