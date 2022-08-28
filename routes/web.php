@@ -32,15 +32,15 @@ Route::get('/sidebar', function () {
     ]);
 })->middleware('auth');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('login')->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 Route::prefix('dashboard')->group(function () {
-    Route::get('/home', [DashboardController::class, 'index'])->name('login')->middleware('auth');
-    Route::get('/eservices', [DashboardController::class, 'eservices'])->name('login')->middleware('auth');
-    Route::get('/aplikasi', [DashboardController::class, 'aplikasi'])->name('login')->middleware('auth');
-    Route::get('/webinar', [DashboardController::class, 'webinar'])->name('login')->middleware('auth');
-    Route::get('/pelatihan', [DashboardController::class, 'pelatihan'])->name('login')->middleware('auth');
-    Route::get('/sertifikasi', [DashboardController::class, 'sertifikasi'])->name('login')->middleware('auth');
-    Route::get('/multimedia', [DashboardController::class, 'multimedia'])->name('login')->middleware('auth');
-    Route::get('/publikasi', [DashboardController::class, 'publikasi'])->name('login')->middleware('auth');
+    Route::get('/home', [DashboardController::class, 'index'])->middleware('auth');
+    Route::get('/eservices', [DashboardController::class, 'eservices'])->middleware('auth');
+    Route::get('/aplikasi', [DashboardController::class, 'aplikasi'])->middleware('auth');
+    Route::get('/webinar', [DashboardController::class, 'webinar'])->middleware('auth');
+    Route::get('/pelatihan', [DashboardController::class, 'pelatihan'])->middleware('auth');
+    Route::get('/sertifikasi', [DashboardController::class, 'sertifikasi'])->middleware('auth');
+    Route::get('/multimedia', [DashboardController::class, 'multimedia'])->middleware('auth');
+    Route::get('/publikasi', [DashboardController::class, 'publikasi'])->middleware('auth');
 });
