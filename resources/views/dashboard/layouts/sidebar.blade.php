@@ -10,24 +10,9 @@
         <li class="{{ Request::is('/dashboard/eservices') ? 'active' : '' }}">
             <a href="/dashboard/eservices"><i class="fa-solid fa-screwdriver-wrench"></i>E-Services</a>
         </li>
-        <li class=""{{ Request::is('/dashboard/aplikasi') ? 'active' : '' }}">
+        <li class="{{ Request::is('/dashboard/aplikasi') ? 'active' : '' }}">
             <a href="/dashboard/aplikasi"><i class="fa-solid fa-mobile-screen-button"></i>Aplikasi</a>
         </li>
-        {{-- <li>
-            <a href="#bigData" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-folder-open"></i>Big Data</a>
-
-            <ul class="collapse list-unstyled" id="bigData">
-                <li>
-                    <a href="/dashboard/webinar">Webinar</a>
-                </li>
-                <li>
-                    <a href="/dashboard/pelatihan">Pelatihan</a>
-                </li>
-                <li>
-                    <a href="/dashboard/sertifikasi">Sertifikasi</a>
-                </li>
-            </ul>
-        </li> --}}
 
         <li>
             <a href="#bigData" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-folder-open"></i>Big Data</a>

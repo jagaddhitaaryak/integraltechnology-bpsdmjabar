@@ -5,15 +5,15 @@
 @section('content')
     <!-- List Grup -->
     <section>
-        <div class="container mt-3">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-12 mt-2">
                     <div class="tab-content" id="nav-tabContent">
                         <!-- Publikasi -->
                         <section class="container">
                             <form>
-                                <img src="/img/publikasi.png" alt="" width="30%" height="30%">
-                                <div class="row form-group">
+                                <img class="rounded mx-auto d-block" src="/img/publikasi.png" alt="" width="25%" height="25%">
+                                <div class="row form-group mt-4">
                                     <div class="col-sm-12">   
                                         <!-- Date -->
                                         <div class="input-group date" id="publikasi" >
