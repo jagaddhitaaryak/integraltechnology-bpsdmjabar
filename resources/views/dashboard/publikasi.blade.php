@@ -14,9 +14,9 @@
                             <form>
                                 <img class="rounded mx-auto d-block" src="/img/publikasi.png" alt="" width="25%" height="25%">
                                 <div class="row form-group mt-4">
-                                    <div class="col-sm-12">   
+                                    <div class="col-sm-12">
                                         <!-- Date -->
-                                        <div class="input-group date" id="publikasi" >
+                                        <div class="input-group date" id="datepicker" >
                                             <input type="text" class="form-control" placeholder="Tanggal">
                                             <span class="input-group-append">
                                                 <span class="input-group-text bg-white d-block">

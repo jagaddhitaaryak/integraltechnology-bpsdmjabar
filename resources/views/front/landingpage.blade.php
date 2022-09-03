@@ -268,7 +268,7 @@
     <!-- SCRIPT -->
     <script src="https://kit.fontawesome.com/848026e0b0.js" crossorigin="anonymous"></script>
     <script src="/js/scripts.js"></script>
-    <script src="/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
             // Add scrollspy to <body>

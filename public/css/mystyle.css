@@ -5,6 +5,11 @@ html {
     scroll-padding-top: 185px;
 }
 
+body {
+    font-family: "Roboto", sans-serif;
+    background: #fafafa;
+}
+
 /* ==== navbar ==== */
 .nav-link {
     font-family: Roboto;

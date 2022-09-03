@@ -19,13 +19,6 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function eservices()
-    {
-        return view('dashboard.eservices', [
-            'title' => 'E - Services'
-        ]);
-    }
-
     public function aplikasi()
     {
         return view('dashboard.aplikasi', [

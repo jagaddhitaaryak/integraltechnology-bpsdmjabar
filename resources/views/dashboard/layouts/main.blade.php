@@ -78,42 +78,9 @@
     <!-- Date E-Services -->
     <script type="text/javascript">
         $(function () {
-            $('#datepicker').datepicker();
-        });
-
-    </script>
-    <!-- Date Webinar -->
-    <script type="text/javascript">
-        $(function () {
-            $('#webinar').datepicker();
-        });
-
-    </script>
-    <!-- Date Pelatihan -->
-    <script type="text/javascript">
-        $(function () {
-            $('#pelatihan').datepicker();
-        });
-
-    </script>
-    <!-- Date Sertifikasi -->
-    <script type="text/javascript">
-        $(function () {
-            $('#sertifikasi').datepicker();
-        });
-
-    </script>
-    <!-- Date Multimedia -->
-    <script type="text/javascript">
-        $(function () {
-            $('#multimedia').datepicker();
-        });
-
-    </script>
-    <!-- Date Publikasi -->
-    <script type="text/javascript">
-        $(function () {
-            $('#publikasi').datepicker();
+            $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
         });
 
     </script>

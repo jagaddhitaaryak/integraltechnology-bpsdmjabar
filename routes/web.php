@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EservicesController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('front/landingpage', [
+    return view('front.landingpage', [
         "title" => "BPSDM Jabar",
         "active" => ""
     ]);
@@ -36,7 +37,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/home', [DashboardController::class, 'index'])->middleware('auth');
-    Route::get('/eservices', [DashboardController::class, 'eservices'])->middleware('auth');
+    Route::get('/eservices', [EservicesController::class, 'index'])->middleware('auth');
+    Route::post('/eservices', [EservicesController::class, 'store']);
+
     Route::get('/aplikasi', [DashboardController::class, 'aplikasi'])->middleware('auth');
     Route::get('/webinar', [DashboardController::class, 'webinar'])->middleware('auth');
     Route::get('/pelatihan', [DashboardController::class, 'pelatihan'])->middleware('auth');

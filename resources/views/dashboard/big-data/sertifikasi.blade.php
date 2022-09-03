@@ -15,7 +15,7 @@
                                 <div class="row form-group">
                                     <div class="col-sm-12">   
                                         <!-- Date -->
-                                        <div class="input-group date" id="sertifikasi" >
+                                        <div class="input-group date" id="datepicker" >
                                             <input type="text" class="form-control" placeholder="Tanggal">
                                             <span class="input-group-append">
                                                 <span class="input-group-text bg-white d-block">
