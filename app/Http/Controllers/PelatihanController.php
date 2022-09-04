@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dashboard;
-use Illuminate\Http\Request;
+use App\Models\Pelatihan;
+use App\Http\Requests\StorePelatihanRequest;
+use App\Http\Requests\UpdatePelatihanRequest;
 
-class DashboardController extends Controller
+class PelatihanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +15,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.dashboard', [
-            'title' => 'Dashboard'
+        return view('dashboard.big-data.pelatihan', [
+            'title' => 'Pelatihan'
         ]);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -31,10 +33,10 @@ class DashboardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StorePelatihanRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePelatihanRequest $request)
     {
         //
     }
@@ -42,10 +44,10 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Pelatihan  $pelatihan
      * @return \Illuminate\Http\Response
      */
-    public function show(Dashboard $dashboard)
+    public function show(Pelatihan $pelatihan)
     {
         //
     }
@@ -53,10 +55,10 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Pelatihan  $pelatihan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dashboard $dashboard)
+    public function edit(Pelatihan $pelatihan)
     {
         //
     }
@@ -64,11 +66,11 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Http\Requests\UpdatePelatihanRequest  $request
+     * @param  \App\Models\Pelatihan  $pelatihan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dashboard $dashboard)
+    public function update(UpdatePelatihanRequest $request, Pelatihan $pelatihan)
     {
         //
     }
@@ -76,10 +78,10 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Pelatihan  $pelatihan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dashboard $dashboard)
+    public function destroy(Pelatihan $pelatihan)
     {
         //
     }

@@ -2,25 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Eservices;
+use App\Models\Webinar;
+use App\Http\Requests\StoreWebinarRequest;
+use App\Http\Requests\UpdateWebinarRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
-class EservicesController extends Controller
+class WebinarController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Eservices $eservices)
+    public function index()
     {
-
-        return view('dashboard.eservices', [
-            'title' => 'E - Services',
-            'eservices' => Eservices::all()
-
+        return view('dashboard.big-data.webinar', [
+            'title' => 'Webinar'
         ]);
     }
 
@@ -37,7 +34,7 @@ class EservicesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreWebinarRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -46,44 +43,44 @@ class EservicesController extends Controller
         $validatedData = $request->validate([
             'tanggal' => 'required',
             'nama_kegiatan' => 'required',
+            'bidang_penyelenggara' => 'required',
             'jml_peserta' => 'required',
-            'jadwal' => 'required | file | mimes:pdf',
+            'link_sertifikat' => 'required',
+            'foto_kegiatan' => 'required | file | mimes:png,jpg,jpeg',
             'data_peserta' => 'required | file | mimes:pdf'
         ]);
 
-        if ($request->file('jadwal')) {
-            $validatedData['jadwal'] = $request->file('jadwal')->store('jadwal-kegiatan');
+        if ($request->file('foto_kegiatan')) {
+            $validatedData['foto_kegiatan'] = $request->file('foto_kegiatan')->store('foto-kegiatan');
         }
 
         if ($request->file('data_peserta')) {
             $validatedData['data_peserta'] = $request->file('data_peserta')->store('data-peserta');
         }
 
-        Eservices::create($validatedData);
+        Webinar::create($validatedData);
 
-        return redirect('/dashboard/eservices')->with('success', 'Data berhasil ditambahkan!');
-        // return $request;
+        return redirect('/dashboard/webinar')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\EServices  $eServices
+     * @param  \App\Models\Webinar  $webinar
      * @return \Illuminate\Http\Response
      */
-    public function show(EServices $eServices)
+    public function show(Webinar $webinar)
     {
-        // return view('dashboard.eservices', [
-        //     'eservices' => Eservices::all()
-        // ]);
+        //
     }
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\EServices  $eServices
+     * @param  \App\Models\Webinar  $webinar
      * @return \Illuminate\Http\Response
      */
-    public function edit(EServices $eServices)
+    public function edit(Webinar $webinar)
     {
         //
     }
@@ -91,11 +88,11 @@ class EservicesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\EServices  $eServices
+     * @param  \App\Http\Requests\UpdateWebinarRequest  $request
+     * @param  \App\Models\Webinar  $webinar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EServices $eServices)
+    public function update(UpdateWebinarRequest $request, Webinar $webinar)
     {
         //
     }
@@ -103,16 +100,11 @@ class EservicesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\EServices  $eServices
+     * @param  \App\Models\Webinar  $webinar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Eservices $eServices)
+    public function destroy(Webinar $webinar)
     {
         //
-    }
-
-    public function download(Request $request, $file)
-    {
-        return response()->download(public_path('storage/data-peserta/' . $file));
     }
 }

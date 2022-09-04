@@ -20,9 +20,10 @@
                     <section class="container">
                         <img class="rounded mx-auto d-block" src="/img/eservice.png" alt="" width="25%" height="25%">
                         <div class="row form-group mt-4">
-
-                            {{-- input data area --}}
+                            @can('super_admin')
+                                {{-- input data area --}}
                             <div class="col-lg-6">
+                                <h1>Input Data</h1>
                                 <form action="/dashboard/eservices" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <!-- Date -->
@@ -65,7 +66,7 @@
                                 </form>
                             </div>
                             {{-- end --}}
-
+                            
                             {{-- view data --}}
                             <div class="col-lg-6">
                                 <h1>Data</h1>
@@ -90,7 +91,32 @@
                                 </form>
                             </div>
                             {{-- end --}}
-
+                            @endcan
+                            
+                            <div class="col-lg-12">
+                                <h1>Data</h1>
+                                <table class="table">
+                                    <thead>
+                                        <th>Tanggal</th>
+                                        <th>Nama Kegiatan</th>
+                                        <th>Jumlah Peserta</th>
+                                        <th>Jadwal Kegiatan</th>
+                                        <th>Data Peserta</th>
+                                    </thead>
+                                    @foreach ($eservices as $data)
+                                    <tr>
+                                        <td>{{ $data->tanggal }}</td>
+                                        <td>{{ $data->nama_kegiatan }}</td>
+                                        <td>{{ $data->jml_peserta }}</td>
+                                        <td><a href="{{ $data->jadwal }}">Download</a></td>
+                                        <td><a href="{{ url('/data/download', $data->data_peserta) }}">Download</a></td>
+                                    </tr>
+                                    @endforeach
+                                </table>
+                                <form action="download.php" method="post">
+                                    <input type="submit" class="btn btn-primary" name="submit" value="Download File" />
+                                </form>
+                            </div>
                         </div>
                     </section>
                 </div>

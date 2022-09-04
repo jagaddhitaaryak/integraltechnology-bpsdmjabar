@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dashboard;
-use Illuminate\Http\Request;
+use App\Models\Sertifikasi;
+use App\Http\Requests\StoreSertifikasiRequest;
+use App\Http\Requests\UpdateSertifikasiRequest;
 
-class DashboardController extends Controller
+class SertifikasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +15,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.dashboard', [
-            'title' => 'Dashboard'
-        ]);
+        return view('dashboard.big-data.sertifikasi', [
+            'title' => 'Sertifikasi'
+        ]); 
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -31,10 +33,10 @@ class DashboardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreSertifikasiRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSertifikasiRequest $request)
     {
         //
     }
@@ -42,10 +44,10 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Sertifikasi  $sertifikasi
      * @return \Illuminate\Http\Response
      */
-    public function show(Dashboard $dashboard)
+    public function show(Sertifikasi $sertifikasi)
     {
         //
     }
@@ -53,10 +55,10 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Sertifikasi  $sertifikasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dashboard $dashboard)
+    public function edit(Sertifikasi $sertifikasi)
     {
         //
     }
@@ -64,11 +66,11 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Http\Requests\UpdateSertifikasiRequest  $request
+     * @param  \App\Models\Sertifikasi  $sertifikasi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dashboard $dashboard)
+    public function update(UpdateSertifikasiRequest $request, Sertifikasi $sertifikasi)
     {
         //
     }
@@ -76,10 +78,10 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param  \App\Models\Sertifikasi  $sertifikasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dashboard $dashboard)
+    public function destroy(Sertifikasi $sertifikasi)
     {
         //
     }

@@ -59,7 +59,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #eae3d2;
+    background-color: #607eaa;
     color: #fff;
     transition: all 0.3s;
 }
@@ -91,7 +91,7 @@ a:focus {
     padding: 10px;
     font-size: 1.1em;
     display: block;
-    color: #1c3879;
+    color: #fff;
 }
 
 #sidebar ul li a:hover {
@@ -101,8 +101,8 @@ a:focus {
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
-    color: #fff;
-    background: #1c3879;
+    color: #607eaa;
+    background: #fff;
 }
 
 a[data-toggle="collapse"] {
