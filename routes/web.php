@@ -30,11 +30,11 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
-Route::get('/sidebar', function () {
-    return view('dashboard/sidebar', [
-        "title" => "E-services"
-    ]);
-})->middleware('auth');
+// Route::get('/sidebar', function () {
+//     return view('dashboard/sidebar', [
+//         "title" => "E-services"
+//     ]);
+// })->middleware('auth');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 

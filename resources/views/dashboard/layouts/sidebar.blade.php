@@ -24,7 +24,7 @@
                 <li class="{{ Request::is('dashboard/pelatihan') ? 'active' : '' }}">
                     <a href="/dashboard/pelatihan">Pelatihan</a>
                 </li>
-                <li class="{{ Request::is('dashboard/sertfikasi') ? 'active' : '' }}">
+                <li class="{{ Request::is('dashboard/sertifikasi') ? 'active' : '' }}">
                     <a href="/dashboard/sertifikasi">Sertifikasi</a>
                 </li>
             </ul>
