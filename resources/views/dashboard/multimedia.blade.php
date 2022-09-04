@@ -4,13 +4,13 @@
 
 @section('content')
     <section>
-        {{-- error message --}}
+        {{-- success message --}}
     @if (session()->has('success'))
     <div class="alert alert-success" role="alert">
         {{ session('success') }}
     </div>
     @endif
-    {{-- end error message --}}
+    {{-- end success message --}}
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 mt-2">
