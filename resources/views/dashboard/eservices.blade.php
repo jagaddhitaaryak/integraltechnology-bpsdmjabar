@@ -3,24 +3,25 @@
 @section('title', 'E - Services')
 
 @section('content')
-<!-- List Grup -->
+
 <section>
-    {{-- error message --}}
+    {{-- success message --}}
     @if (session()->has('success'))
     <div class="alert alert-success" role="alert">
         {{ session('success') }}
     </div>
     @endif
-    {{-- end error message --}}
+    {{-- end success message --}}
 
     <div class="container">
         <div class="row">
             <div class="col-sm-12 mt-2">
                 <div class="tab-content" id="nav-tabContent">
-                    <!-- E-Services -->
                     <section class="container">
                         <img class="rounded mx-auto d-block" src="/img/eservice.png" alt="" width="25%" height="25%">
                         <div class="row form-group mt-4">
+
+                            {{-- input data area --}}
                             <div class="col-lg-6">
                                 <form action="/dashboard/eservices" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -63,37 +64,38 @@
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </form>
                             </div>
+                            {{-- end --}}
 
                             {{-- view data --}}
                             <div class="col-lg-6">
-                                ini halaman view
-                                @foreach ($countries as $country)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $country->name }}</td>
-                                        <td>
-                                            <a href="/posts?country={{ $country->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
-                                            <a href="/dashboard/countries/{{ $country->slug }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
-                                            <form action="/dashboard/countries/{{ $country->slug }}" method="post" class="d-inline">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span></button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                <p>{{  }}</p>
+                                <h1>Data</h1>
+                                <table class="table">
+                                    <thead>
+                                        <th>Tanggal</th>
+                                        <th>Nama Kegiatan</th>
+                                        <th>Jumlah Peserta</th>
+                                        <th>Jadwal Kegiatan</th>
+                                        <th>Data Peserta</th>
+                                    </thead>
+                                    {{-- <tr>
+                                        <td>{{ $eservices[0]->tanggal }}</td>
+                                        <td>{{ $eservices[0]->nama_kegiatan }}</td>
+                                        <td>{{ $eservices[0]->jml_peserta }}</td>
+                                        <td><a href="{{ $eservices[0]->jadwal }}">Download</a></td>
+                                        <td><a href="{{ url('/eservices[0]/download', $eservices[0]->data_peserta) }}">Download</a></td>
+                                    </tr> --}}
+                                </table>
                                 <form action="download.php" method="post">
                                     <input type="submit" class="btn btn-primary" name="submit" value="Download File" />
                                 </form>
                             </div>
+                            {{-- end --}}
+
                         </div>
                     </section>
-                    <!-- Tutup E-Services -->
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Tutup List Grup -->
 @endsection

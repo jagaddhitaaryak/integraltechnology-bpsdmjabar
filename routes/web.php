@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AplikasiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EservicesController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MultimediaController;
+use App\Http\Controllers\PublikasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,13 +40,17 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/home', [DashboardController::class, 'index'])->middleware('auth');
-    Route::get('/eservices', [EservicesController::class, 'index'])->middleware('auth');
-    Route::post('/eservices', [EservicesController::class, 'store']);
+    Route::resource('/eservices', EservicesController::class)->middleware('auth');
+    Route::get('/eservices/download/{file}', [DashboardController::class, 'download']);
 
-    Route::get('/aplikasi', [DashboardController::class, 'aplikasi'])->middleware('auth');
+    Route::resource('/aplikasi', AplikasiController::class)->middleware('auth');
+
     Route::get('/webinar', [DashboardController::class, 'webinar'])->middleware('auth');
     Route::get('/pelatihan', [DashboardController::class, 'pelatihan'])->middleware('auth');
     Route::get('/sertifikasi', [DashboardController::class, 'sertifikasi'])->middleware('auth');
-    Route::get('/multimedia', [DashboardController::class, 'multimedia'])->middleware('auth');
-    Route::get('/publikasi', [DashboardController::class, 'publikasi'])->middleware('auth');
+
+    Route::resource('/multimedia', MultimediaController::class)->middleware('auth');
+    Route::resource('/publikasi', PublikasiController::class)->middleware('auth');
+
+    // Route::get('/publikasi', [DashboardController::class, 'publikasi'])->middleware('auth');
 });

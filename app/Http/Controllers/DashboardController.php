@@ -19,13 +19,6 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function aplikasi()
-    {
-        return view('dashboard.aplikasi', [
-            'title' => 'Aplikasi'
-        ]);
-    }
-
     public function webinar()
     {
         return view('dashboard.big-data.webinar', [
@@ -47,19 +40,6 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function multimedia()
-    {
-        return view('dashboard.multimedia', [
-            'title' => 'Multimedia'
-        ]);
-    }
-
-    public function publikasi()
-    {
-        return view('dashboard.publikasi', [
-            'title' => 'Publikasi'
-        ]);
-    }
     /**
      * Show the form for creating a new resource.
      *

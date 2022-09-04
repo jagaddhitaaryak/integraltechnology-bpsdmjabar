@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Eservices;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class EservicesController extends Controller
 {
@@ -12,10 +14,13 @@ class EservicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Eservices $eservices)
     {
+
         return view('dashboard.eservices', [
-            'title' => 'E - Services'
+            'title' => 'E - Services',
+            'eservices' => DB::table('eservices')->latest()->first()
+            
         ]);
     }
 
@@ -56,7 +61,7 @@ class EservicesController extends Controller
 
         Eservices::create($validatedData);
 
-        return redirect('/dashboard/eservices')->with('success', 'New data has been added!');
+        return redirect('/dashboard/eservices')->with('success', 'Data berhasil ditambahkan!');
         // return $request;
     }
 
@@ -68,9 +73,10 @@ class EservicesController extends Controller
      */
     public function show(EServices $eServices)
     {
-        //
+        // return view('dashboard.eservices', [
+        //     'eservices' => Eservices::all()
+        // ]);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -100,8 +106,13 @@ class EservicesController extends Controller
      * @param  \App\Models\EServices  $eServices
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EServices $eServices)
+    public function destroy(Eservices $eServices)
     {
         //
+    }
+
+    public function download(Request $request, $file)
+    {
+        return response()->download(public_path('storage/data-peserta/' . $file));
     }
 }
