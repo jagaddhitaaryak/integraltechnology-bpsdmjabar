@@ -17,7 +17,7 @@
 
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-navy">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="img/logo-integral.png" alt="" width="100" height="65">
@@ -67,7 +67,7 @@
                     </li>
                     @else
                     <li class="nav-item">
-                        <a class="nav-link {{ ($active === "login") ? 'active' : '' }} btn btn-dark btn-login text-primary" href="/login"><i
+                        <a class="nav-link {{ ($active === "login") ? 'active' : '' }} btn btn-dark btn-login text-navy" href="/login"><i
                                 class="bi bi-box-arrow-in-right"></i> Login</a>
                     </li>
                     @endauth
@@ -78,29 +78,24 @@
     <!-- TUTUP NAVBAR -->
 
     <!-- HOME -->
-    <section id="home" class="bg-primary hero-area section-padding">
+    <section id="home" class="bg-navy hero-area section-padding">
         <div class="container py-5">
             <div class="row py-3 justify-content-center align-items-center">
-                <div class="col-lg-6">
-                    <img src="/img/home.png" alt="" width="75%" height="100%" class="logo-home">
+                <div class="col-lg-6 logo-home">
+                    <img src="/img/home2.png" alt="" width="65%" height="65%">
                 </div>
                 <div class="col-lg-5 hero-text">
                     <h1 class="head-title text-light fw-bold mb-5">Integral Technology</h2>
                         <p class="text-light fs-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et ex hic
                             aperiam asperiores maiores dolore eveniet eligendi in reiciendis unde consequatur est
-                            officiis, ipsa odit qui cumque necessitatibus laboriosam iste.</p>
+                            officiis, ipsa odit qui cumque necessitatibus laboriosam iste.
+                        </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="waves">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#0d6efd" fill-opacity="1"
-                d="M0,160L80,144C160,128,320,96,480,101.3C640,107,800,149,960,170.7C1120,192,1280,192,1360,192L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
-            </path>
-        </svg>
-    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0B0B45" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,96C480,96,600,128,720,149.3C840,171,960,181,1080,181.3C1200,181,1320,171,1380,165.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
 
     <!-- TUTUP HOME -->
 
@@ -108,29 +103,26 @@
     <section id="about" class="section-padding">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-5 text-center">
-                    <h1 class="head-tittle text-dark mb-4 fw-bold">Apa itu Integral Technology?</h1>
+                <div class="col-lg-6 text-center">
+                    <h1 class="head-tittle text-dark mb-4 fw-bold text-left mt-4">Apa itu Integral Technology?</h1>
                     <p class="fs-5 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi at
                         dolorum, laboriosam aliquid, perspiciatis in tempora quis nulla architecto eveniet doloribus
                         corporis incidunt vitae? Soluta, animi provident officia pariatur sequi illo error accusantium
                         hic magnam ipsa sit, id doloremque? Vero, omnis possimus tenetur laborum ratione dicta explicabo
                         aspernatur consequuntur eaque.</p>
                 </div>
-                <div class="col-lg-5 ">
-                    <img src="/img/about.png" alt="" width="100%" height="100%" class="logo-about m-img">
+                <div class="col-lg-5 logo-about">
+                    <img src="/img/about.png" alt="" width="90%" height="100%" class="m-img">
                 </div>
             </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 320">
-            <path fill="#0d6efd" fill-opacity="1"
-                d="M0,128L80,122.7C160,117,320,107,480,122.7C640,139,800,181,960,181.3C1120,181,1280,139,1360,117.3L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
-            </path>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0B0B45" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,96C480,96,600,128,720,149.3C840,171,960,181,1080,181.3C1200,181,1320,171,1380,165.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
         </svg>
     </section>
     <!-- TUTUP ABOUT -->
 
     <!-- INTEGRAL -->
-    <section id="integral" class="bg-primary section-padding">
+    <section id="integral" class="bg-navy section-padding">
         <h1 class="fw-bold text-light text-center mb-5">Layanan Integral</h1>
         <div class="container">
             <div class="row justify-content-center">
@@ -191,21 +183,17 @@
             </div>
         </div>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#0d6efd" fill-opacity="1"
-            d="M0,32L80,74.7C160,117,320,203,480,202.7C640,203,800,117,960,101.3C1120,85,1280,139,1360,165.3L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
-        </path>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0B0B45" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,96C480,96,600,128,720,149.3C840,171,960,181,1080,181.3C1200,181,1320,171,1380,165.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
     <!-- TUTUP ITEGRAL
 
     <-- CONTACT -->
     <section id="contact" class="section-padding">
         <div class="container text-center">
-            <h1 class="head-tittle pb-5 fw-bold">Kontak</h1>
+            <h1 class="head-tittle pb-5 fw-bold text-navy">Kontak</h1>
             <div class="row">
                 <div class="col-lg-4">
                     <i class="fa-solid fa-location-dot size-icon"></i>
-                    <p class="fs-5 fw-bold text-primary">Address</p>
+                    <p class="fs-5 fw-bold text-navy">Address</p>
                     <p>
                         Jl. Kolonel Masturi No.11, KM 3,5 <br>
                         Cipageran, Cimahi Utara, <br>
@@ -217,14 +205,14 @@
                 <div class="col-lg-4">
                     <i class="fa-solid fa-phone size-icon"></i>
                     <br>
-                    <p class="fs-5 fw-bold text-primary">Phone</p>
+                    <p class="fs-5 fw-bold text-navy">Phone</p>
                     <p>+62 813-8283-0814</p>
                 </div>
 
                 <div class="col-lg-4">
                     <i class="fa-solid fa-envelope size-icon"></i>
                     <br>
-                    <p class="fs-5 fw-bold text-primary">Email</p>
+                    <p class="fs-5 fw-bold text-navy">Email</p>
                     <p>simpanakuaja@gmail.com</p>
                 </div>
             </div>
@@ -235,7 +223,7 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <img src="/img/location.svg" width="70%" height="90%" class="logo-about">
+                    <img src="/img/location2.svg" width="70%" height="90%" class="logo-about ml-logo-about">
                 </div>
             </div>
         </div>
@@ -243,7 +231,7 @@
     <!-- TUTUP CONTACT -->
 
     <!-- FOOTER -->
-    <footer class="text-center bg-primary p-4 mt-5">
+    <footer class="text-center bg-dark p-4 mt-5">
         <span class="text-white fw-bold">&copy TIM UNPAS, 2022.</span>
     </footer>
     <!-- AKHIR FOOTER -->

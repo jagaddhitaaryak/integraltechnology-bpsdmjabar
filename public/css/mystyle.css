@@ -27,7 +27,7 @@ body {
 }
 
 .btn-login:hover {
-    background-color: #ffff;
+    background-color: #0B0B45;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 /* ==== end navbar ==== */
@@ -40,6 +40,10 @@ body {
 .head-title {
     /* margin-top: 230px; */
     text-transform: uppercase;
+}
+
+.text-left {
+    text-align: left;
 }
 
 .waves {
@@ -57,7 +61,7 @@ body {
 
 .size-icon {
     font-size: 80px;
-    color: #0d6efd;
+    color: #0B0B45;
 }
 
 #integral img {
@@ -87,14 +91,48 @@ body {
     /* display: flex; */
 }
 
+.logo-home {
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
+}
+
+.logo-about {
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
+    margin-left: 80px;
+}
+
+.bg-navy {
+    background-color: #0B0B45;
+}
+
+.text-navy {
+    color:#0B0B45 ;
+}
+
+.ml-logo-about {
+    margin-top: 30px;
+}
+
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+
 @media screen and (max-width: 1124px) {
     .hero-area {
         max-height: 1124px;
     }
 }
 
-@media only screen and (min-width: 768px) {
-    .hero-text {
+@media screen and (max-width: 1124px) {
+    .hero-area {
+        max-height: 1124px;
     }
 }
 
