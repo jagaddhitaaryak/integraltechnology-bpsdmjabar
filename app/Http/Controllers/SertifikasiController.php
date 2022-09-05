@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sertifikasi;
 use App\Http\Requests\StoreSertifikasiRequest;
 use App\Http\Requests\UpdateSertifikasiRequest;
+use Illuminate\Http\Request;
 
 class SertifikasiController extends Controller
 {
@@ -17,7 +18,7 @@ class SertifikasiController extends Controller
     {
         return view('dashboard.big-data.sertifikasi', [
             'title' => 'Sertifikasi'
-        ]); 
+        ]);
     }
 
     /**
@@ -36,9 +37,29 @@ class SertifikasiController extends Controller
      * @param  \App\Http\Requests\StoreSertifikasiRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSertifikasiRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'tanggal' => 'required',
+            'nama_kegiatan' => 'required',
+            'bidang_penyelenggara' => 'required',
+            'jml_peserta' => 'required',
+            'link_sertifikat' => 'required',
+            'foto_kegiatan' => 'required | file | mimes:png,jpg,jpeg',
+            'data_peserta' => 'required | file | mimes:pdf'
+        ]);
+
+        if ($request->file('foto_kegiatan')) {
+            $validatedData['foto_kegiatan'] = $request->file('foto_kegiatan')->store('foto-kegiatan');
+        }
+
+        if ($request->file('data_peserta')) {
+            $validatedData['data_peserta'] = $request->file('data_peserta')->store('data-peserta');
+        }
+
+        Sertifikasi::create($validatedData);
+
+        return redirect('/dashboard/webinar')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**

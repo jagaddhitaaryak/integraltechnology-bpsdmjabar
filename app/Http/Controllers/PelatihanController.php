@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pelatihan;
 use App\Http\Requests\StorePelatihanRequest;
 use App\Http\Requests\UpdatePelatihanRequest;
+use Illuminate\Http\Request;
 
 class PelatihanController extends Controller
 {
@@ -36,9 +37,29 @@ class PelatihanController extends Controller
      * @param  \App\Http\Requests\StorePelatihanRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePelatihanRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'tanggal' => 'required',
+            'nama_kegiatan' => 'required',
+            'bidang_penyelenggara' => 'required',
+            'jml_peserta' => 'required',
+            'link_sertifikat' => 'required',
+            'foto_kegiatan' => 'required | file | mimes:png,jpg,jpeg',
+            'data_peserta' => 'required | file | mimes:pdf'
+        ]);
+
+        if ($request->file('foto_kegiatan')) {
+            $validatedData['foto_kegiatan'] = $request->file('foto_kegiatan')->store('foto-kegiatan');
+        }
+
+        if ($request->file('data_peserta')) {
+            $validatedData['data_peserta'] = $request->file('data_peserta')->store('data-peserta');
+        }
+
+        Pelatihan::create($validatedData);
+
+        return redirect('/dashboard/webinar')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Sertifikasi extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'tanggal',
+        'nama_kegiatan',
+        'bidang_penyelenggara',
+        'jml_peserta',
+        'link_sertifikat',
+        'foto_kegiatan',
+        'data_peserta'
+    ];
 }
