@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AplikasiController;
+use App\Http\Controllers\BigDataController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EservicesController;
 use App\Http\Controllers\LoginController;
@@ -42,6 +43,8 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/eservices/download/{file}', [DashboardController::class, 'download']);
 
     Route::resource('/aplikasi', AplikasiController::class)->middleware('auth');
+
+    Route::resource('/bigdata', BigDataController::class)->middleware('auth');
 
     Route::resource('/webinar', WebinarController::class)->middleware('auth');
     Route::resource('/pelatihan', PelatihanController::class)->middleware('auth');

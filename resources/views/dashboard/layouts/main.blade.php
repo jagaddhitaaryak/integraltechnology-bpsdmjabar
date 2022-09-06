@@ -29,12 +29,24 @@
         @include('dashboard.layouts.sidebar')
         <div id="content">
             @include('dashboard.layouts.navbar')
+            <div class="row justify-content-center">
+                <div class="btn-group col-lg-6 " role="group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                        <label class="btn btn-danger" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;" for="btnradio1"><a href="/dashboard/webinar">Webinar</a></label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                    <label class="btn btn-warning" for="btnradio1"><a href="/dashboard/pelatihan">Pelatihan</label></a>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                    <label class="btn btn-success" style="border-top-right-radius: 10px; border-bottom-right-radius: 10px;" for="btnradio1"><a href="/dashboard/sertifikasi">Sertifikasi</label></a>
+                </div>
+            </div>
             @yield('content')
         </div>
     </div>
 
     <!-- FOOTER -->
-    <footer class="text-center bg-primary p-4">
+    <footer class="text-center bg-dark p-4">
         <span class="text-white fw-bold">© 2022 Tim UNPAS</span>
     </footer>
     <!-- AKHIR FOOTER -->

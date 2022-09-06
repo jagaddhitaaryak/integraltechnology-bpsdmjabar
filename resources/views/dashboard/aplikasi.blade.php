@@ -16,22 +16,41 @@
             <div class="col-sm-12">
                 <div class="tab-content" id="nav-tabContent">
                     <section class="container">
-                        <img class="rounded mx-auto d-block" src="/img/aplikasi.png" alt="" width="30%" height="30%">
-                        <div class="row form-group mt-4">
+                        <div class="row form-group mt-4 bg-light" style="border-radius: 10px">
                             <div class="col-lg-6">
                                 <form action="/dashboard/aplikasi" method="POST">
+                                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                            <h1 class="h2">Tambah Data Aplikasi</h1>
+                                    </div>
                                     @csrf
                                     <!-- Nama Aplikasi -->
-                                    <div class="input-group mb-3 mt-3">
-                                        <input type="text" class="form-control" placeholder="Nama Aplikasi" width="50%" name="nama_apl">
+                                    <div class="mb-3">
+                                        <label for="nama" class="form-label">Nama Aplikasi</label>
+                                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" required autofocus value="{{ old('nama') }}">
+                                        @error('nama')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <!-- Link Aplikasi -->
-                                    <div class="input-group mb-3 mt-3">
-                                        <input type="text" class="form-control" placeholder="Link Aplikasi" width="50%" name="link_apl">
+                                    <div class="mb-3">
+                                        <label for="linkAplikasi" class="form-label">Link Aplikasi</label>
+                                        <input type="text" class="form-control @error('linkAplikasi') is-invalid @enderror" id="linkAplikasi" name="linkAplikasi" required autofocus value="{{ old('linkAplikasi') }}">
+                                        @error('linkAplikasi')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <!-- Deskripsi Aplikasi -->
-                                    <div class="input-group mb-3 mt-3">
-                                        <textarea class="form-control" placeholder="Deskripsi" style="height: 100px" name="desc_apl"></textarea>
+                                    <div class="mb-3">
+                                        <label for="body" class="form-label">Deskripsi</label>
+                                        @error('body')
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
+                                        <input id="body" type="hidden" name="body" value="{{ old('body') }}">
+                                        <trix-editor input="body"></trix-editor>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </form>
@@ -54,4 +73,10 @@
     </div>
 </section>
 <!-- Tutup List Grup -->
+
+<script>
+      document.addEventListener('trix-file-accept', function(e) {
+        e.preventDefault();
+      })
+</script>
 @endsection

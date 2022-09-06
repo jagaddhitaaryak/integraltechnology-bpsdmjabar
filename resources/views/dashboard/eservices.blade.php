@@ -18,8 +18,7 @@
             <div class="col-sm-12 mt-2">
                 <div class="tab-content" id="nav-tabContent">
                     <section class="container">
-                        <img class="rounded mx-auto d-block" src="/img/eservice.png" alt="" width="25%" height="25%">
-                        <div class="row form-group mt-4">
+                        <div class="row form-group mt-4 bg-light" style="border-radius: 10px">
                             @can('super_admin')
                                 {{-- input data area --}}
                             <div class="col-lg-6">
@@ -94,7 +93,11 @@
                             @endcan
                             
                             <div class="col-lg-12">
-                                <h1>Data</h1>
+                                <form class="d-flex" role="search">
+                                <a href="/dashboard/" class="btn btn-dark mb-3">Tambah Data</a>
+                                    <input class="form-control me-2 mb-3" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-success mb-3" type="submit">Search</button>
+                                </form>
                                 <table class="table">
                                     <thead>
                                         <th>Tanggal</th>
