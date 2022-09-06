@@ -6,21 +6,17 @@ body {
 body {
     align-items: center;
     padding-top: 40px;
+    
     padding-bottom: 40px;
-    background-image: linear-gradient(
-        to bottom right,
-        #0b9ac2,
-        #1c72c0,
-        #74dae8,
-        #0d5fa9
-    );
-    /* background-color: #f5f5f5; */
+    background: url(/img/bglogin8.jpg);
+    background-size: cover;
 }
 
 .login-box {
     border-radius: 10px;
     width: 400px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    background: rgba(121, 91, 148, 0.742);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.6);
 }
 
 .form-signin {
@@ -51,4 +47,13 @@ body {
 .h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
+    color: white;
+}
+
+.container{
+    color: white;
+}
+
+btn{
+    color: white;
 }
