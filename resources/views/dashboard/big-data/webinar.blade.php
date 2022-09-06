@@ -76,7 +76,6 @@
                             </div>
                         </div>
                     </section>
-                    <!-- Tutup Webinar -->
                 </div>
             </div>
         </div>

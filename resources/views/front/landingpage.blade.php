@@ -43,14 +43,12 @@
 
                     @auth
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle btn btn-warning text-dark" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle btn btn-warning text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Hello, {{ auth()->user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item" href="/dashboard"><i class="bi bi-house-fill"></i>
-                                     Dashboard</a>
+                                <a class="dropdown-item" href="/dashboard"><i class="bi bi-house-fill"></i> Dashboard</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -58,17 +56,14 @@
                             <li>
                                 <form action="/logout" method="get">
                                     @csrf
-                                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>
-                                         Logout
-                                    </button>
+                                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
                                 </form>
                             </li>
                         </ul>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a class="nav-link {{ ($active === "login") ? 'active' : '' }} btn btn-dark btn-login text-navy" href="/login"><i
-                                class="bi bi-box-arrow-in-right"></i> Login</a>
+                        <a class="nav-link {{ ($active === "login") ? 'active' : '' }} btn btn-dark btn-login" href="/login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                     </li>
                     @endauth
                 </ul>
@@ -81,10 +76,10 @@
     <section id="home" class="bg-navy hero-area section-padding">
         <div class="container py-5">
             <div class="row py-3 justify-content-center align-items-center">
-                <div class="col-lg-6 logo-home">
+                <div class="col-lg-6 up-down text-center">
                     <img src="/img/home2.png" alt="" width="65%" height="65%">
                 </div>
-                <div class="col-lg-5 hero-text">
+                <div class="col-lg-5 mt-3">
                     <h1 class="head-title text-light fw-bold mb-5">Integral Technology</h2>
                         <p class="text-light fs-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et ex hic
                             aperiam asperiores maiores dolore eveniet eligendi in reiciendis unde consequatur est
@@ -102,8 +97,8 @@
     <!-- ABOUT -->
     <section id="about" class="section-padding">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-5 text-center">
                     <h1 class="head-tittle text-dark mb-4 fw-bold text-left mt-4">Apa itu Integral Technology?</h1>
                     <p class="fs-5 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi at
                         dolorum, laboriosam aliquid, perspiciatis in tempora quis nulla architecto eveniet doloribus
@@ -111,7 +106,7 @@
                         hic magnam ipsa sit, id doloremque? Vero, omnis possimus tenetur laborum ratione dicta explicabo
                         aspernatur consequuntur eaque.</p>
                 </div>
-                <div class="col-lg-5 logo-about">
+                <div class="col-lg-6 up-down text-center">
                     <img src="/img/about.png" alt="" width="90%" height="100%" class="m-img">
                 </div>
             </div>
@@ -223,7 +218,7 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <img src="/img/location2.svg" width="70%" height="90%" class="logo-about ml-logo-about">
+                    <img src="/img/location2.svg" width="70%" height="90%" class="up-down mt-3">
                 </div>
             </div>
         </div>

@@ -39,7 +39,6 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/home', [DashboardController::class, 'index'])->middleware('auth');
 
     Route::resource('/eservices', EservicesController::class)->middleware('auth');
-    Route::get('/eservices/download/{file}', [DashboardController::class, 'download']);
 
     Route::resource('/aplikasi', AplikasiController::class)->middleware('auth');
 

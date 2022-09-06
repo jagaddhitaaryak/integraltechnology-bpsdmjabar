@@ -17,10 +17,9 @@ class EservicesController extends Controller
     public function index(Eservices $eservices)
     {
 
-        return view('dashboard.eservices', [
+        return view('dashboard.eservices.eservices', [
             'title' => 'E - Services',
             'eservices' => Eservices::all()
-
         ]);
     }
 
@@ -29,9 +28,11 @@ class EservicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function tambah()
     {
-        //
+        return view('dashboard.eservices.tambah', [
+            'title' => 'E - Services'
+        ]);
     }
 
     /**
@@ -47,8 +48,8 @@ class EservicesController extends Controller
             'tanggal' => 'required',
             'nama_kegiatan' => 'required',
             'jml_peserta' => 'required',
-            'jadwal' => 'required | file | mimes:pdf',
-            'data_peserta' => 'required | file | mimes:pdf'
+            'jadwal' => 'file | mimes:pdf',
+            'data_peserta' => 'file | mimes:pdf'
         ]);
 
         if ($request->file('jadwal')) {
@@ -109,10 +110,5 @@ class EservicesController extends Controller
     public function destroy(Eservices $eServices)
     {
         //
-    }
-
-    public function download(Request $request, $file)
-    {
-        return response()->download(public_path('storage/data-peserta/' . $file));
     }
 }

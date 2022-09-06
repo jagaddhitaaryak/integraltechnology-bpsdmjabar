@@ -18,17 +18,20 @@ body {
     margin-right: 32px;
 }
 
+.btn {
+}
+
 .btn-login {
     font-weight: 500;
     text-transform: uppercase;
-    border-radius: 40px;
-    background-color: #ffff;
+    background-color: #0b0b45;
     border: none;
 }
 
 .btn-login:hover {
-    background-color: #0B0B45;
+    background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #0b0b45;
 }
 /* ==== end navbar ==== */
 
@@ -38,7 +41,6 @@ body {
 }
 
 .head-title {
-    /* margin-top: 230px; */
     text-transform: uppercase;
 }
 
@@ -54,14 +56,9 @@ body {
     text-align: justify;
 }
 
-.logo-about {
-    /* margin-top: -50px; */
-    /* margin-left: 70px; */
-}
-
 .size-icon {
     font-size: 80px;
-    color: #0B0B45;
+    color: #0b0b45;
 }
 
 #integral img {
@@ -69,6 +66,7 @@ body {
     height: 100px;
     margin: auto;
 }
+
 .index-post {
     width: 1124px;
     transition: all 1.5s;
@@ -88,30 +86,19 @@ body {
 .shadow:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
     border: solid 1.5px rgb(138, 8, 8);
-    /* display: flex; */
 }
 
-.logo-home {
+.up-down {
     -webkit-animation: mover 1s infinite alternate;
     animation: mover 1s infinite alternate;
-}
-
-.logo-about {
-    -webkit-animation: mover 1s infinite alternate;
-    animation: mover 1s infinite alternate;
-    margin-left: 80px;
 }
 
 .bg-navy {
-    background-color: #0B0B45;
+    background-color: #0b0b45;
 }
 
 .text-navy {
-    color:#0B0B45 ;
-}
-
-.ml-logo-about {
-    margin-top: 30px;
+    color: #0b0b45;
 }
 
 @-webkit-keyframes mover {
@@ -123,20 +110,13 @@ body {
     }
 }
 
-
 @media screen and (max-width: 1124px) {
     .hero-area {
         max-height: 1124px;
     }
 }
 
-@media screen and (max-width: 1124px) {
-    .hero-area {
-        max-height: 1124px;
-    }
-}
-
-@media screen and (max-width: 562px) {
+@media screen and (max-width: 768px) {
     .container-card {
         margin: 0px 50px;
         padding: 30px 30px;
