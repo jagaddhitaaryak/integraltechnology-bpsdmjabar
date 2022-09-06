@@ -14,9 +14,10 @@
 </head>
 
 <body class="text-center d-flex justify-content-center">
-    <div class=" container">
+    <div class="container">
+        {{-- <h1>Halaman Login</h1> --}}
         <div class="row justify-content-center">
-            <div class="col-lg-5 bg-light login-box">
+            <div class="col-lg-5 bg-blue login-box">
                 {{-- error message --}}
                 @if(session()->has('loginError'))
                 <div class="alert alert-danger alert-dismissible fade show mx-4 my-3" role="alert">
@@ -29,7 +30,7 @@
                     <!-- Awal Form -->
                     <form method="POST" action="/login">
                         @csrf
-                        <img class="mb-4 mt-3" src="/img/integral-biru.png" width="150" height="100">
+                        <img class="mb-4 mt-3" src="/img/integral-putih.png" width="150" height="100">
                         <div class="h1">
                             <h1 class="h3 mb-3 fw-normal">Login</h1>
                         </div>
@@ -50,7 +51,7 @@
                         {{-- Button --}}
                         <div class="row">
                             <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                <button type="submit" class="btn btn-dark text-light">Login</button>
                             </div>
                         </div>
                     </form>
@@ -60,7 +61,7 @@
                 {{-- Footer --}}
                 <footer class="mt-auto py-3">
                     <div class="container">
-                        <span class="text-muted">&copy Integral Technology. 2022.</span>
+                        <span class="text-white">&copy Integral Technology. 2022.</span>
                     </div>
                 </footer>
             </div>
