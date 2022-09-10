@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('bidang_penyelenggara');
             $table->string('jml_peserta');
             $table->string('link_sertifikat');
-            $table->string('foto_kegiatan');
-            $table->string('data_peserta');
+            $table->string('foto_kegiatan')->nullable();
+            $table->string('data_peserta')->nullable();
             $table->timestamps();
         });
     }

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->date('tanggal');
             $table->string('nama_kegiatan');
             $table->string('jml_peserta');
-            $table->string('jadwal');
-            $table->string('data_peserta');
+            $table->string('jadwal')->nullable();
+            $table->string('data_peserta')->nullable();
         });
     }
 

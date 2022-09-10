@@ -1,16 +1,19 @@
 /*
     DEMO STYLE
 */
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 body {
-    font-family: "Roboto", sans-serif;
-    background: #fafafa;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background: #454d55;
+    color: #fff;
+    overflow-x: hidden;
 }
 
 p {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.1em;
+    font-family: "Rubik", sans-serif;
+    /* font-size: 1.1em; */
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
@@ -26,11 +29,11 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background: #fff;
+    background: #323232;
     border: none;
-    border-radius: 0;
+    border-radius: 15px;
     margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-btn {
@@ -59,7 +62,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background-color: #607eaa;
+    background-color: #0b0b45;
     color: #fff;
     transition: all 0.3s;
 }
@@ -74,12 +77,11 @@ a:focus {
 }
 
 #sidebar ul li a i {
-    padding: 10px 0;
     margin-right: 10px;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
+    padding: 0px 0;
 }
 
 #sidebar ul p {
@@ -89,7 +91,6 @@ a:focus {
 
 #sidebar ul li a {
     padding: 10px;
-    font-size: 1.1em;
     display: block;
     color: #fff;
 }
@@ -116,25 +117,6 @@ a[data-toggle="collapse"] {
     right: 20px;
     transform: translateY(-50%);
 }
-
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #1c3879;
-}
-
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */

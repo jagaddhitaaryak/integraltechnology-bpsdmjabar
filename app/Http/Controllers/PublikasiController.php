@@ -16,8 +16,9 @@ class PublikasiController extends Controller
      */
     public function index()
     {
-        return view('dashboard.publikasi', [
-            'title' => 'Publikasi'
+        return view('dashboard.publikasi.index', [
+            'title' => 'Publikasi',
+            'publikasi' => Publikasi::latest()->paginate(3)
         ]);
     }
 

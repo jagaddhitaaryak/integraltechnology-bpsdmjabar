@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('tanggal');
             $table->string('nama_kegiatan');
-            $table->string('link_video');
+            $table->string('judul_flyer');
             $table->string('link_pub_intern');
             $table->string('link_pub_extern');
             $table->timestamps();

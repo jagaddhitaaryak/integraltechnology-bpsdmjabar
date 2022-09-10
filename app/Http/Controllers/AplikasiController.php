@@ -14,8 +14,9 @@ class AplikasiController extends Controller
      */
     public function index()
     {
-        return view('dashboard.aplikasi', [
-            'title' => 'Aplikasi'
+        return view('dashboard.aplikasi.index', [
+            'title' => 'Aplikasi',
+            'aplikasi' => Aplikasi::latest()->paginate(3)
         ]);
     }
 

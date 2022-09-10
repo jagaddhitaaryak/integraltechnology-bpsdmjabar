@@ -16,8 +16,9 @@ class MultimediaController extends Controller
      */
     public function index()
     {
-        return view('dashboard.multimedia', [
-            'title' => 'Multimedia'
+        return view('dashboard.multimedia.index', [
+            'title' => 'Multimedia',
+            'multimedia' => Multimedia::latest()->paginate(3)
         ]);
     }
 

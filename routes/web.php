@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AplikasiController;
+use App\Http\Controllers\BigDataController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EservicesController;
 use App\Http\Controllers\LoginController;
@@ -38,9 +39,17 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::prefix('dashboard')->group(function () {
     Route::get('/home', [DashboardController::class, 'index'])->middleware('auth');
 
-    Route::resource('/eservices', EservicesController::class)->middleware('auth');
+    // Route::resource('/eservices', EservicesController::class)->middleware('auth');
+    Route::get('/eservices', [EservicesController::class, 'index']);
+    Route::get('/eservices/tambah-data', [EservicesController::class, 'create']);
+    Route::post('/eservices/tambah-data', [EservicesController::class, 'store']);
 
-    Route::resource('/aplikasi', AplikasiController::class)->middleware('auth');
+    // Route::resource('/aplikasi', AplikasiController::class)->middleware('auth');
+    Route::get('/aplikasi', [AplikasiController::class, 'index']);
+    Route::get('/aplikasi/tambah-data', [AplikasiController::class, 'create']);
+
+    Route::get('/big-data', [BigDataController::class, 'index']);
+    Route::get('/big-data/tambah-data', [BigDataController::class, 'create']);
 
     Route::resource('/webinar', WebinarController::class)->middleware('auth');
     Route::resource('/pelatihan', PelatihanController::class)->middleware('auth');

@@ -20,12 +20,17 @@
                     <section class="container">
                         <img class="rounded mx-auto d-block" src="/img/eservice.png" alt="" width="25%" height="25%">
                         <div class="row form-group mt-4">
-                            <a href="/dashboard/eservices/tambah">
-                                <button class="btn btn-primary">Tambah Data</button>
-                            </a>
-                            <div class="col-lg-12">
+                            <div class="col-6">
                                 <h1>Data</h1>
-                                <table class="table">
+                            </div>
+                            <div class="col-6 ml-auto">
+                                <a href="/dashboard/eservices/tambah">
+                                    <button class="btn btn-primary">Tambah Data</button>
+                                </a>
+                            </div>
+                            <div class="col-lg-12">
+                                
+                                <table class="table table-dark table-striped">
                                     <thead>
                                         <th>Tanggal</th>
                                         <th>Nama Kegiatan</th>

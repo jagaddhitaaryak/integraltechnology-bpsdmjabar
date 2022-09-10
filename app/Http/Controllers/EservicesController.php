@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Eservices;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 class EservicesController extends Controller
 {
@@ -17,7 +15,7 @@ class EservicesController extends Controller
     public function index(Eservices $eservices)
     {
 
-        return view('dashboard.eservices.eservices', [
+        return view('dashboard.eservices.index', [
             'title' => 'E - Services',
             'eservices' => Eservices::all()
         ]);
@@ -28,7 +26,7 @@ class EservicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function tambah()
+    public function create()
     {
         return view('dashboard.eservices.tambah', [
             'title' => 'E - Services'

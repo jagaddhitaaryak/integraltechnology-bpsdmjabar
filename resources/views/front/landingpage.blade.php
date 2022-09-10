@@ -227,7 +227,7 @@
 
     <!-- FOOTER -->
     <footer class="text-center bg-dark p-4 mt-5">
-        <span class="text-white fw-bold">&copy TIM UNPAS, 2022.</span>
+        <span class="text-white fw-bold">&copy TIM UNPAS | Integral Tech 2022.</span>
     </footer>
     <!-- AKHIR FOOTER -->
 
