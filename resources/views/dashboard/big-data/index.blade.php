@@ -89,7 +89,7 @@
                                             <th>Foto Kegiatan</th>
                                             <th>Data Peserta</th>
                                         </thead>
-                                        @if ($pelatihan->count( > 0))
+                                        @if ($pelatihan->count() > 0)
                                             @foreach ($pelatihan as $data)
                                             <tr>
                                                 <td>{{ Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
