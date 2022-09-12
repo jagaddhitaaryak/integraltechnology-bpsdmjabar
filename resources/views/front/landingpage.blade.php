@@ -19,8 +19,8 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-navy">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo-integral.png" alt="" width="100" height="65">
+            <a class="navbar-brand" href="/">
+                <img src="img/logo-integral.png" alt="" width="125">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -121,7 +121,7 @@
         <h1 class="fw-bold text-light text-center mb-5">Layanan Integral</h1>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 mb-3">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/cc.png" class="card-img-top" alt="..." style="display:block; margin:auto;">
                         <div class="card-body">
@@ -132,7 +132,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-3">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/ee.png" class="card-img-top" alt="..." style="display:block; margin:auto;">
                         <div class="card-body">
@@ -144,7 +144,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-3">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/bb.png" class="card-img-top" alt="..." style="display:block; margin:auto;">
                         <div class="card-body">
@@ -154,7 +154,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-3">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/aa.png" class="card-img-top" alt="..." style="display:block; margin:auto;">
                         <div class="card-body">
@@ -165,7 +165,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-3">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="shadow card h-100 text-center p-3">
                         <img src="/img/dd.png" class="card-img-top" alt="..." style="display:block; margin:auto;">
                         <div class="card-body">
@@ -227,7 +227,7 @@
 
     <!-- FOOTER -->
     <footer class="text-center bg-dark p-4 mt-5">
-        <span class="text-white fw-bold">&copy TIM UNPAS | Integral Tech 2022.</span>
+        <span class="text-white fw-bold">&copyTARA-Team | Integral Tech 2022.</span>
     </footer>
     <!-- AKHIR FOOTER -->
 

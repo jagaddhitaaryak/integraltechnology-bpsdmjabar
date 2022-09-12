@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- List Grup  -->
-    <section>
+    <section style="height: 70vh">
         <div class="container mt-3">
             <div class="row">
                 <div class="col-sm-12">

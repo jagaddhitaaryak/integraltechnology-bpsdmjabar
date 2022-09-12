@@ -11,14 +11,12 @@ body {
 }
 
 /* ==== navbar ==== */
+
 .nav-link {
     font-family: Roboto;
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 32px;
-}
-
-.btn {
 }
 
 .btn-login {

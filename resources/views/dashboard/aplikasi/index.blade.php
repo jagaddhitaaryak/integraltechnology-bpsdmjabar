@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.main')
 
-@section('title', 'E - Services')
+@section('title', 'Aplikasi')
 
 @section('content')
 
@@ -14,7 +14,6 @@
     {{-- end success message --}}
 
     <div class="container">
-        {{-- <img class="rounded mx-auto d-block" src="/img/eservice.png" alt="" width="25%" height="25%"> --}}
         <div class="row">
             <div class="col-sm-12 mt-2">
                 <div class="tab-content" id="nav-tabContent">
@@ -32,7 +31,7 @@
                         </div>
                         <div class="row form-group mt-2">
                             <div class="col-lg-12 table-responsive">
-                                <table class="table table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
+                                <table class="table table-bordered table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
                                     <thead>
                                         <th>Nama Aplikasi</th>
                                         <th>Link Aplikasi</th>

@@ -9,13 +9,86 @@ use Illuminate\Http\Request;
 
 class BigDataController extends Controller
 {
-    function index()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         return view('dashboard.big-data.index', [
             'title' => 'Big Data',
-            'webinar' => Webinar::latest()->paginate(3),
-            'pelatihan' => Pelatihan::latest()->paginate(3),
-            'sertifikasi' => Sertifikasi::latest()->paginate(3)
+            'webinar' => Webinar::all(),
+            'pelatihan' => Pelatihan::all(),
+            'sertifikasi' => Sertifikasi::all()
         ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('dashboard.big-data.tambah', [
+            'title' => 'Big Data'
+        ]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Pelatihan  $pelatihan
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Pelatihan $pelatihan)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Pelatihan  $pelatihan
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Pelatihan $pelatihan)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Pelatihan  $pelatihan
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Pelatihan $pelatihan)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Pelatihan  $pelatihan
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Pelatihan $pelatihan)
+    {
+        //
     }
 }

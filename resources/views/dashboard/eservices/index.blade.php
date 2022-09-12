@@ -14,7 +14,6 @@
     {{-- end success message --}}
 
     <div class="container">
-        {{-- <img class="rounded mx-auto d-block" src="/img/eservice.png" alt="" width="25%" height="25%"> --}}
         <div class="row">
             <div class="col-sm-12 mt-2">
                 <div class="tab-content" id="nav-tabContent">
@@ -32,7 +31,7 @@
                         </div>
                         <div class="row form-group mt-2">
                             <div class="col-lg-12 table-responsive">
-                                <table class="table table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
+                                <table class="table table-bordered table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>Tanggal</th>
@@ -48,8 +47,12 @@
                                                 <td>{{ Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
                                                 <td>{{ $data->nama_kegiatan }}</td>
                                                 <td>{{ $data->jml_peserta }}</td>
-                                                <td><a class="btn btn-sm btn-primary " href="{{ $data->jadwal }}"><i class="fa-solid fa-download"></i>  Download</a></td>
-                                                <td><a class="btn btn-sm btn-primary" href="{{ url('/data/download', $data->data_peserta) }}"><i class="fa-solid fa-download"></i>  Download</a></td>
+                                                <form action="/" method="get">
+                                                    @csrf
+                                                    <td><a class="btn btn-sm btn-primary {{ $data->jadwal == null ? 'disabled' : '' }}" href="{{ 'public/files/jadwal-kegiatan/'. $data->jadwal }}"><i class="fa-solid fa-download"></i>  Download</a></td>
+                                                </form>
+                                                
+                                                <td><a class="btn btn-sm btn-primary {{ $data->data_peserta == null ? 'disabled' : '' }}" href="{{ public_path() . '/files/data-peserta/' . $data->data_peserta }}"><i class="fa-solid fa-download"></i>  Download</a></td>
                                             </tr>
                                         @endforeach
                                     @else

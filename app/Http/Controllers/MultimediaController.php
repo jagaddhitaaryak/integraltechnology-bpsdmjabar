@@ -18,7 +18,7 @@ class MultimediaController extends Controller
     {
         return view('dashboard.multimedia.index', [
             'title' => 'Multimedia',
-            'multimedia' => Multimedia::latest()->paginate(3)
+            'multimedia' => Multimedia::all()
         ]);
     }
 
@@ -29,7 +29,9 @@ class MultimediaController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.multimedia.tambah', [
+            'title' => 'Multimedia'
+        ]);
     }
 
     /**

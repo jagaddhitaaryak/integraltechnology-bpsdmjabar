@@ -39,14 +39,13 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::prefix('dashboard')->group(function () {
     Route::get('/home', [DashboardController::class, 'index'])->middleware('auth');
 
-    // Route::resource('/eservices', EservicesController::class)->middleware('auth');
     Route::get('/eservices', [EservicesController::class, 'index']);
     Route::get('/eservices/tambah-data', [EservicesController::class, 'create']);
     Route::post('/eservices/tambah-data', [EservicesController::class, 'store']);
 
-    // Route::resource('/aplikasi', AplikasiController::class)->middleware('auth');
     Route::get('/aplikasi', [AplikasiController::class, 'index']);
     Route::get('/aplikasi/tambah-data', [AplikasiController::class, 'create']);
+    Route::post('/aplikasi/tambah-data', [AplikasiController::class, 'store']);
 
     Route::get('/big-data', [BigDataController::class, 'index']);
     Route::get('/big-data/tambah-data', [BigDataController::class, 'create']);
@@ -55,6 +54,11 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('/pelatihan', PelatihanController::class)->middleware('auth');
     Route::resource('/sertifikasi', SertifikasiController::class)->middleware('auth');
 
-    Route::resource('/multimedia', MultimediaController::class)->middleware('auth');
-    Route::resource('/publikasi', PublikasiController::class)->middleware('auth');
+    Route::get('/multimedia', [MultimediaController::class, 'index']);
+    Route::get('/multimedia/tambah-data', [MultimediaController::class, 'create']);
+    Route::post('/multimedia/tambah-data', [MultimediaController::class, 'store']);
+
+    Route::get('/publikasi', [PublikasiController::class, 'index']);
+    Route::get('/publikasi/tambah-data', [PublikasiController::class, 'create']);
+    Route::post('/publikasi/tambah-data', [PublikasiController::class, 'store']);
 });

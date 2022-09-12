@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Eservices;
+use Illuminate\Auth\Access\Response;
+use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Http\Request;
 
 class EservicesController extends Controller
@@ -12,9 +14,8 @@ class EservicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Eservices $eservices)
+    public function index()
     {
-
         return view('dashboard.eservices.index', [
             'title' => 'E - Services',
             'eservices' => Eservices::all()
@@ -51,17 +52,24 @@ class EservicesController extends Controller
         ]);
 
         if ($request->file('jadwal')) {
-            $validatedData['jadwal'] = $request->file('jadwal')->store('jadwal-kegiatan');
+            // $validatedData['jadwal'] = $request->file('jadwal')->store('file/jadwal-kegiatan');
+            $path = public_path() . '/files/jadwal-kegiatan/';
+
+            $validatedData['jadwal'] = $request->file('jadwal')->getClientOriginalName();
+            $request->file('jadwal')->move($path, $validatedData['jadwal']);
         }
 
         if ($request->file('data_peserta')) {
-            $validatedData['data_peserta'] = $request->file('data_peserta')->store('data-peserta');
+            // $validatedData['jadwal'] = $request->file('jadwal')->store('file/jadwal-kegiatan');
+            $path = public_path() . '/files/data-peserta/';
+
+            $validatedData['data_peserta'] = $request->file('data_peserta')->getClientOriginalName();
+            $request->file('data_peserta')->move($path, $validatedData['data_peserta']);
         }
 
         Eservices::create($validatedData);
 
         return redirect('/dashboard/eservices')->with('success', 'Data berhasil ditambahkan!');
-        // return $request;
     }
 
     /**
@@ -108,5 +116,12 @@ class EservicesController extends Controller
     public function destroy(Eservices $eServices)
     {
         //
+    }
+
+    public function download(Request $request)
+    {
+        $path = public_path() . "/files/data-peserta" . $request->file();
+
+        return response()->download($path);
     }
 }

@@ -1,6 +1,6 @@
 <nav id="sidebar">
     <div class="sidebar-header text-center">
-        <img src="/img/integral-putih.png" alt="" width="175" >
+        <img src="/img/integral-putih.png" alt="" width="175">
     </div>
 
     <ul class="list-unstyled components">

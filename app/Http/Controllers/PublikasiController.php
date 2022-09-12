@@ -18,7 +18,7 @@ class PublikasiController extends Controller
     {
         return view('dashboard.publikasi.index', [
             'title' => 'Publikasi',
-            'publikasi' => Publikasi::latest()->paginate(3)
+            'publikasi' => Publikasi::all()
         ]);
     }
 
@@ -29,7 +29,9 @@ class PublikasiController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.publikasi.tambah', [
+            'title' => 'Publikasi'
+        ]);
     }
 
     /**
@@ -43,7 +45,7 @@ class PublikasiController extends Controller
         $validatedData = $request->validate([
             'tanggal' => 'required',
             'nama_kegiatan' => 'required',
-            'link_video' => 'required',
+            'judul_flyer' => 'required',
             'link_pub_intern' => 'required',
             'link_pub_extern' => 'required'
         ]);

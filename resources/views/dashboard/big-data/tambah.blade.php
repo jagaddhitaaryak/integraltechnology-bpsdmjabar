@@ -24,51 +24,45 @@
                 <div class="tab-content" id="nav-tabContent">
                     {{-- webinar --}}
                     <div class="tab-pane fade show active" id="nav-webinar" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                        <div class="col-12 py-3 bg-primary">
+                        <div class="col-12 py-3 bg-dark">
                             <form action="/dashboard/webinar" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <!-- Date -->
-                                <div class="input-group date" id="datepicker">
-                                    <input type="text" class="form-control" placeholder="Tanggal" name="tanggal" autocomplete="off">
-                                    <span class="input-group-append">
-                                        <span class="input-group-text bg-white d-block">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                    </span>
+                                <label for="" class="form-label">Tanggal</label>
+                                <div class="input-group date mb-3">
+                                    <input type="date" class="form-control" placeholder="Tanggal" name="tanggal" autocomplete="off" required>
                                 </div>
                                 <!-- Nama Kegiatan -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Nama Kegiatan Webinar"
-                                        aria-label="Nama Kegiatan Webinar" width="50%" name="nama_kegiatan">
+                                <label for="" class="form-label">Nama Kegiatan</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Nama Kegiatan Webinar" aria-label="Nama Kegiatan Webinar" width="50%" name="nama_kegiatan" required>
                                 </div>
                                 <!-- Bidang Penyelenggara -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Bidang Penyelenggara"
-                                        aria-label="Bidang Penyelenggara" width="50%" name="bidang_penyelenggara">
+                                <label for="" class="form-label">Bidang Penyelenggara</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Bidang Penyelenggara" aria-label="Bidang Penyelenggara" width="50%" name="bidang_penyelenggara" required>
                                 </div>
                                 <!-- Jumlah Peserta -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Jumlah Peserta"
-                                        aria-label="Jumlah Peserta" width="50%" name="jml_peserta">
+                                <label for="jumlah" class="form-label">Jumlah Peserta</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Jumlah Peserta" aria-label="Jumlah Peserta" width="50%" name="jml_peserta" required>
                                 </div>
                                 <!-- Link Sertifikat -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Link Sertifikat"
-                                        aria-label="Link Sertifikat" width="50%" name="link_sertifikat">
+                                <label for="" class="form-label">Link Sertifikat</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Link Sertifikat" aria-label="Link Sertifikat" width="50%" name="link_sertifikat" required>
                                 </div>
                                 <!-- Upload Foto Kegiatan -->
                                 <label for="formFile" class="form-label">Upload Foto Kegiatan</label>
                                 <div class="input-group mb-3">
-                                    <input type="file" class="form-control" id="inputGroupFile02" name="foto_kegiatan" accept=".pdf>
-                                    <label class="input-group-text" for="inputGroupFile02"><i
-                                            class="fa-solid fa-upload"></i></label>
+                                    <input type="file" class="form-control" id="inputGroupFile02" name="foto_kegiatan" accept=".pdf">
+                                    <label class="input-group-text" for="inputGroupFile02"><i class="fa-solid fa-upload"></i></label>
                                 </div>
                                 <!-- Upload Data Peserta -->
                                 <label for="formFile" class="form-label">Upload Data Peserta</label>
                                 <div class="input-group mb-3">
                                     <input type="file" class="form-control" id="inputGroupFile02" name="data_peserta" accept=".pdf">
-                                    <label class="input-group-text" for="inputGroupFile02"><i
-                                            class="fa-solid fa-upload"></i></label>
+                                    <label class="input-group-text" for="inputGroupFile02"><i class="fa-solid fa-upload"></i></label>
                                 </div>
                                 <button type="submit" class="btn btn-success">Simpan</button>
                             </form>
@@ -78,51 +72,45 @@
 
                     {{-- pelatihan --}}
                     <div class="tab-pane fade" id="nav-pelatihan" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                        <div class="col-12 py-3 bg-primary">
-                            <form action="/dashboard/webinar" method="post" enctype="multipart/form-data">
+                        <div class="col-12 py-3 bg-dark">
+                            <form action="/dashboard/pelatihan" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <!-- Date -->
-                                <div class="input-group date" id="datepicker">
-                                    <input type="text" class="form-control" placeholder="Tanggal" name="tanggal" autocomplete="off">
-                                    <span class="input-group-append">
-                                        <span class="input-group-text bg-white d-block">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                    </span>
+                                <label for="" class="form-label">Tanggal</label>
+                                <div class="input-group date mb-3">
+                                    <input type="date" class="form-control" placeholder="Tanggal" name="tanggal" autocomplete="off" required>
                                 </div>
                                 <!-- Nama Kegiatan -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Nama Kegiatan Pelatihan"
-                                        aria-label="Nama Kegiatan Webinar" width="50%" name="nama_kegiatan">
+                                <label for="" class="form-label">Nama Kegiatan</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Nama Kegiatan Pelatihan" aria-label="Nama Kegiatan Pelatihan" width="50%" name="nama_kegiatan" required>
                                 </div>
                                 <!-- Bidang Penyelenggara -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Bidang Penyelenggara"
-                                        aria-label="Bidang Penyelenggara" width="50%" name="bidang_penyelenggara">
+                                <label for="" class="form-label">Bidang Penyelenggara</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Bidang Penyelenggara" aria-label="Bidang Penyelenggara" width="50%" name="bidang_penyelenggara" required>
                                 </div>
                                 <!-- Jumlah Peserta -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Jumlah Peserta"
-                                        aria-label="Jumlah Peserta" width="50%" name="jml_peserta">
+                                <label for="jumlah" class="form-label">Jumlah Peserta</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Jumlah Peserta" aria-label="Jumlah Peserta" width="50%" name="jml_peserta" required>
                                 </div>
                                 <!-- Link Sertifikat -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Link Sertifikat"
-                                        aria-label="Link Sertifikat" width="50%" name="link_sertifikat">
+                                <label for="" class="form-label">Link Sertifikat</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Link Sertifikat" aria-label="Link Sertifikat" width="50%" name="link_sertifikat" required>
                                 </div>
                                 <!-- Upload Foto Kegiatan -->
                                 <label for="formFile" class="form-label">Upload Foto Kegiatan</label>
                                 <div class="input-group mb-3">
                                     <input type="file" class="form-control" id="inputGroupFile02" name="foto_kegiatan" accept=".pdf">
-                                    <label class="input-group-text" for="inputGroupFile02"><i
-                                            class="fa-solid fa-upload"></i></label>
+                                    <label class="input-group-text" for="inputGroupFile02"><i class="fa-solid fa-upload"></i></label>
                                 </div>
                                 <!-- Upload Data Peserta -->
                                 <label for="formFile" class="form-label">Upload Data Peserta</label>
                                 <div class="input-group mb-3">
                                     <input type="file" class="form-control" id="inputGroupFile02" name="data_peserta" accept=".pdf">
-                                    <label class="input-group-text" for="inputGroupFile02"><i
-                                            class="fa-solid fa-upload"></i></label>
+                                    <label class="input-group-text" for="inputGroupFile02"><i class="fa-solid fa-upload"></i></label>
                                 </div>
                                 <button type="submit" class="btn btn-success">Simpan</button>
                             </form>
@@ -132,51 +120,45 @@
 
                     {{-- sertfifikasi --}}
                     <div class="tab-pane fade" id="nav-sertifikasi" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                        <div class="col-12 py-3 bg-primary">
-                            <form action="/dashboard/webinar" method="post" enctype="multipart/form-data">
+                        <div class="col-12 py-3 bg-dark">
+                            <form action="/dashboard/sertifikasi" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <!-- Date -->
-                                <div class="input-group date" id="datepicker">
-                                    <input type="text" class="form-control" placeholder="Tanggal" name="tanggal" autocomplete="off">
-                                    <span class="input-group-append">
-                                        <span class="input-group-text bg-white d-block">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                    </span>
+                                <label for="" class="form-label">Tanggal</label>
+                                <div class="input-group date mb-3">
+                                    <input type="date" class="form-control" placeholder="Tanggal" name="tanggal" autocomplete="off" required>
                                 </div>
                                 <!-- Nama Kegiatan -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Nama Kegiatan Sertifikasi"
-                                        aria-label="Nama Kegiatan Webinar" width="50%" name="nama_kegiatan">
+                                <label for="" class="form-label">Nama Kegiatan</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Nama Kegiatan Sertifikasi" aria-label="Nama Kegiatan Sertifikasi" width="50%" name="nama_kegiatan" required>
                                 </div>
                                 <!-- Bidang Penyelenggara -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Bidang Penyelenggara"
-                                        aria-label="Bidang Penyelenggara" width="50%" name="bidang_penyelenggara">
+                                <label for="" class="form-label">Bidang Penyelenggara</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Bidang Penyelenggara" aria-label="Bidang Penyelenggara" width="50%" name="bidang_penyelenggara" required>
                                 </div>
                                 <!-- Jumlah Peserta -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Jumlah Peserta"
-                                        aria-label="Jumlah Peserta" width="50%" name="jml_peserta">
+                                <label for="jumlah" class="form-label">Jumlah Peserta</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Jumlah Peserta" aria-label="Jumlah Peserta" width="50%" name="jml_peserta" required>
                                 </div>
                                 <!-- Link Sertifikat -->
-                                <div class="input-group mb-3 mt-3">
-                                    <input type="text" class="form-control" placeholder="Link Sertifikat"
-                                        aria-label="Link Sertifikat" width="50%" name="link_sertifikat">
+                                <label for="" class="form-label">Link Sertifikat</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Link Sertifikat" aria-label="Link Sertifikat" width="50%" name="link_sertifikat" required>
                                 </div>
                                 <!-- Upload Foto Kegiatan -->
                                 <label for="formFile" class="form-label">Upload Foto Kegiatan</label>
                                 <div class="input-group mb-3">
                                     <input type="file" class="form-control" id="inputGroupFile02" name="foto_kegiatan" accept=".pdf">
-                                    <label class="input-group-text" for="inputGroupFile02"><i
-                                            class="fa-solid fa-upload"></i></label>
+                                    <label class="input-group-text" for="inputGroupFile02"><i class="fa-solid fa-upload"></i></label>
                                 </div>
                                 <!-- Upload Data Peserta -->
                                 <label for="formFile" class="form-label">Upload Data Peserta</label>
                                 <div class="input-group mb-3">
                                     <input type="file" class="form-control" id="inputGroupFile02" name="data_peserta" accept=".pdf">
-                                    <label class="input-group-text" for="inputGroupFile02"><i
-                                            class="fa-solid fa-upload"></i></label>
+                                    <label class="input-group-text" for="inputGroupFile02"><i class="fa-solid fa-upload"></i></label>
                                 </div>
                                 <button type="submit" class="btn btn-success">Simpan</button>
                             </form>

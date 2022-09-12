@@ -16,7 +16,7 @@ class AplikasiController extends Controller
     {
         return view('dashboard.aplikasi.index', [
             'title' => 'Aplikasi',
-            'aplikasi' => Aplikasi::latest()->paginate(3)
+            'aplikasi' => Aplikasi::all()
         ]);
     }
 
@@ -27,7 +27,9 @@ class AplikasiController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.aplikasi.tambah', [
+            'title' => 'Aplikasi'
+        ]);
     }
 
     /**

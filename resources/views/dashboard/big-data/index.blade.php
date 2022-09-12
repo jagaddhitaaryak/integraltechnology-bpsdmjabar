@@ -40,7 +40,7 @@
                         <div class="col-12 py-3">
                             <div class="row form-group mt-2">
                                 <div class="col-lg-12 table-responsive">
-                                    <table class="table table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
+                                    <table class="table table-bordered table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
                                         <thead>
                                             <th>Tanggal</th>
                                             <th>Nama Kegiatan</th>
@@ -58,8 +58,8 @@
                                                 <td>{{ $data->bidang_penyelenggara }}</td>
                                                 <td>{{ $data->jml_peserta }}</td>
                                                 <td>{{ $data->link_sertifikat }}</td>
-                                                <td><a class="btn btn-sm btn-primary" href="{{ $data->jadwal }}"><i class="fa-solid fa-download"></i>  Download</a></td>
-                                                <td><a class="btn btn-sm btn-primary" href="{{ $data->jadwal }}"><i class="fa-solid fa-download"></i>  Download</a></td>
+                                                <td><a class="btn btn-sm btn-primary {{ $data->foto_kegiatan == null ? 'disabled' : '' }}" href="{{ $data->foto_kegiatan }}"><i class="fa-solid fa-download"></i>  Download</a></td>
+                                                <td><a class="btn btn-sm btn-primary {{ $data->data_peserta == null ? 'disabled' : '' }}" href="{{ $data->data_peserta }}"><i class="fa-solid fa-download"></i>  Download</a></td>
                                             </tr>
                                             @endforeach
                                         @else
@@ -78,8 +78,8 @@
                     <div class="tab-pane fade" id="nav-pelatihan" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                         <div class="col-12 py-3">
                             <div class="row form-group mt-2">
-                                <div class="col-lg-12">
-                                    <table class="table table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
+                                <div class="col-lg-12 table-responsive">
+                                    <table class="table table-bordered table-dark table-striped align-items-center" id="dataTable2" style="width: 100%">
                                         <thead>
                                             <th>Tanggal</th>
                                             <th>Nama Kegiatan</th>
@@ -89,16 +89,16 @@
                                             <th>Foto Kegiatan</th>
                                             <th>Data Peserta</th>
                                         </thead>
-                                        @if ($pelatihan->count())
+                                        @if ($pelatihan->count( > 0))
                                             @foreach ($pelatihan as $data)
                                             <tr>
-                                                <td>{{ $data->tanggal }}</td>
+                                                <td>{{ Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
                                                 <td>{{ $data->nama_kegiatan }}</td>
                                                 <td>{{ $data->bidang_penyelenggara }}</td>
                                                 <td>{{ $data->jml_peserta }}</td>
                                                 <td>{{ $data->link_sertifikat }}</td>
-                                                <td><a class="btn btn-sm btn-primary" href="{{ $data->jadwal }}"><i class="fa-solid fa-download"></i>  Download</a></td>
-                                                <td><a class="btn btn-sm btn-primary" href="{{ $data->jadwal }}"><i class="fa-solid fa-download"></i>  Download</a></td>
+                                                <td><a class="btn btn-sm btn-primary {{ $data->foto_kegiatan == null ? 'disabled' : '' }}" href="{{ $data->foto_kegiatan }}"><i class="fa-solid fa-download"></i>  Download</a></td>
+                                                <td><a class="btn btn-sm btn-primary {{ $data->data_peserta == null ? 'disabled' : '' }}" href="{{ $data->data_peserta }}"><i class="fa-solid fa-download"></i>  Download</a></td>
                                             </tr>
                                             @endforeach
                                         @else
@@ -118,7 +118,7 @@
                         <div class="col-12 py-3">
                             <div class="row form-group mt-2">
                                 <div class="col-lg-12 table-responsive">
-                                    <table class="table table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
+                                    <table class="table table-bordered table-dark table-striped align-items-center" id="dataTable3" style="width: 100%">
                                         <thead>
                                             <th>Tanggal</th>
                                             <th>Nama Kegiatan</th>
@@ -131,7 +131,7 @@
                                         @if ($sertifikasi->count())
                                             @foreach ($sertifikasi as $data)
                                             <tr>
-                                                <td>{{ $data->tanggal }}</td>
+                                                <td>{{ Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
                                                 <td>{{ $data->nama_kegiatan }}</td>
                                                 <td>{{ $data->bidang_penyelenggara }}</td>
                                                 <td>{{ $data->jml_peserta }}</td>

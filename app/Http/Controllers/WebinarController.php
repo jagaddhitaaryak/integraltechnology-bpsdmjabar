@@ -46,21 +46,27 @@ class WebinarController extends Controller
             'bidang_penyelenggara' => 'required',
             'jml_peserta' => 'required',
             'link_sertifikat' => 'required',
-            'foto_kegiatan' => 'required | file | mimes:png,jpg,jpeg',
-            'data_peserta' => 'required | file | mimes:pdf'
+            'foto_kegiatan' => 'file | mimes:pdf',
+            'data_peserta' => 'file | mimes:pdf'
         ]);
 
         if ($request->file('foto_kegiatan')) {
-            $validatedData['foto_kegiatan'] = $request->file('foto_kegiatan')->store('foto-kegiatan');
+            $path = public_path() . '/files/webinar/foto-kegiatan/';
+
+            $validatedData['foto_kegiatan'] = $request->file('foto_kegiatan')->getClientOriginalName();
+            $request->file('foto_kegiatan')->move($path, $validatedData['foto_kegiatan']);
         }
 
         if ($request->file('data_peserta')) {
-            $validatedData['data_peserta'] = $request->file('data_peserta')->store('data-peserta');
+            $path = public_path() . '/files/webinar/data-peserta/';
+
+            $validatedData['data_peserta'] = $request->file('data_peserta')->getClientOriginalName();
+            $request->file('data_peserta')->move($path, $validatedData['data_peserta']);
         }
 
         Webinar::create($validatedData);
 
-        return redirect('/dashboard/webinar')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/dashboard/big-data')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**

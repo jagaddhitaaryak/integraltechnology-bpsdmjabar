@@ -32,7 +32,7 @@
                         </div>
                         <div class="row form-group mt-2">
                             <div class="col-lg-12 table-responsive">
-                                <table class="table table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
+                                <table class="table table-bordered table-dark table-striped align-items-center" id="dataTable" style="width: 100%">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>Tanggal</th>
@@ -42,7 +42,7 @@
                                             <th>Link Publikasi External</th>
                                         </tr>
                                     </thead>
-                                    @if ($publikasi->count())
+                                    @if ($publikasi->count() > 0)
                                         @foreach ($publikasi as $data)
                                             <tr>
                                                 <td>{{ Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
