@@ -72,9 +72,12 @@ class PublikasiController extends Controller
      * @param  \App\Models\Publikasi  $publikasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publikasi $publikasi)
+    public function edit(Publikasi $publikasi, $id)
     {
-        //
+        $publikasi = Publikasi::find($id);
+        return view('dashboard.publikasi.edit', [
+            'publikasi' => $publikasi
+        ]);
     }
 
     /**

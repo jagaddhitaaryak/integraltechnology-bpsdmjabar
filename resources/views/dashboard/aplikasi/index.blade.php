@@ -36,13 +36,18 @@
                                         <th>Nama Aplikasi</th>
                                         <th>Link Aplikasi</th>
                                         <th>Deskripsi Aplikasi</th>
+                                        <th>Aksi</th>
                                     </thead>
-                                    @if ($aplikasi->count())
+                                    @if ($aplikasi->count() > 0)
                                         @foreach ($aplikasi as $data)
                                         <tr>
                                             <td>{{ $data->nama_apl }}</td>
                                             <td>{{ $data->link_apl }}</td>
                                             <td>{{ $data->desc_apl }}</td>
+                                            <td>
+                                                <a href="/dashboard/aplikasi/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                <a href="" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Delete</a>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     @else

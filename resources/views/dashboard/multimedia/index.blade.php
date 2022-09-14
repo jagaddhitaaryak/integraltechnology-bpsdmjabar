@@ -38,6 +38,7 @@
                                             <th>Tanggal</th>
                                             <th>Nama Kegiatan</th>
                                             <th>Link Video</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     @if ($multimedia->count() > 0)
@@ -46,6 +47,10 @@
                                                 <td>{{ Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
                                                 <td>{{ $data->nama_kegiatan }}</td>
                                                 <td>{{ $data->link_video }}</td>
+                                                <td>
+                                                    <a href="/dashboard/multimedia/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                    <a href="" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Delete</a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @else

@@ -14,7 +14,6 @@
     {{-- end success message --}}
 
     <div class="container">
-        {{-- <img class="rounded mx-auto d-block" src="/img/eservice.png" alt="" width="25%" height="25%"> --}}
         <div class="row">
             <div class="col-sm-12 mt-2">
                 <div class="tab-content" id="nav-tabContent">
@@ -40,6 +39,7 @@
                                             <th>Judul Flyer</th>
                                             <th>Link Publikasi Internal</th>
                                             <th>Link Publikasi External</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     @if ($publikasi->count() > 0)
@@ -50,6 +50,10 @@
                                                 <td>{{ $data->judul_flyer }}</td>
                                                 <td>{{ $data->link_pub_intern }}</td>
                                                 <td>{{ $data->link_pub_extern }}</td>
+                                                <td>
+                                                    <a href="/dashboard/publikasi/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                    <a href="" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Delete</a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @else

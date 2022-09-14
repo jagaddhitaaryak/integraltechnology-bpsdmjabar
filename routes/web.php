@@ -42,10 +42,15 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/eservices', [EservicesController::class, 'index']);
     Route::get('/eservices/tambah-data', [EservicesController::class, 'create']);
     Route::post('/eservices/tambah-data', [EservicesController::class, 'store']);
+    Route::get('/eservices/edit/{id}', [EservicesController::class, 'edit']);
+    Route::put('/eservices/update-data/{id}', [EservicesController::class, 'update']);
+    Route::delete('/eservices/delete/{id}', [EservicesController::class, 'destroy']);
 
     Route::get('/aplikasi', [AplikasiController::class, 'index']);
     Route::get('/aplikasi/tambah-data', [AplikasiController::class, 'create']);
     Route::post('/aplikasi/tambah-data', [AplikasiController::class, 'store']);
+    Route::get('/aplikasi/edit/{id}', [AplikasiController::class, 'edit']);
+    Route::put('/aplikasi/update-data/{id}', [AplikasiController::class, 'update']);
 
     Route::get('/big-data', [BigDataController::class, 'index']);
     Route::get('/big-data/tambah-data', [BigDataController::class, 'create']);
@@ -57,8 +62,10 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/multimedia', [MultimediaController::class, 'index']);
     Route::get('/multimedia/tambah-data', [MultimediaController::class, 'create']);
     Route::post('/multimedia/tambah-data', [MultimediaController::class, 'store']);
+    Route::get('/multimedia/edit/{id}', [MultimediaController::class, 'edit']);
 
     Route::get('/publikasi', [PublikasiController::class, 'index']);
     Route::get('/publikasi/tambah-data', [PublikasiController::class, 'create']);
     Route::post('/publikasi/tambah-data', [PublikasiController::class, 'store']);
+    Route::get('/publikasi/edit/{id}', [PublikasiController::class, 'edit']);
 });

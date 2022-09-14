@@ -70,9 +70,12 @@ class MultimediaController extends Controller
      * @param  \App\Models\Multimedia  $multimedia
      * @return \Illuminate\Http\Response
      */
-    public function edit(Multimedia $multimedia)
+    public function edit(Multimedia $multimedia, $id)
     {
-        //
+        $multimedia = Multimedia::find($id);
+        return view('dashboard.multimedia.edit', [
+            'multimedia' => $multimedia
+        ]);
     }
 
     /**

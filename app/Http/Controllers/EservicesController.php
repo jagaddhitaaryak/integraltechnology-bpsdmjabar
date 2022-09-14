@@ -60,7 +60,6 @@ class EservicesController extends Controller
         }
 
         if ($request->file('data_peserta')) {
-            // $validatedData['jadwal'] = $request->file('jadwal')->store('file/jadwal-kegiatan');
             $path = public_path() . '/files/data-peserta/';
 
             $validatedData['data_peserta'] = $request->file('data_peserta')->getClientOriginalName();
@@ -87,12 +86,15 @@ class EservicesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\EServices  $eServices
+     * @param  \App\Models\Eservices  $eServices
      * @return \Illuminate\Http\Response
      */
-    public function edit(EServices $eServices)
+    public function edit(Eservices $eservices, $id)
     {
-        //
+        $eservices = Eservices::find($id);
+        return view('dashboard.eservices.edit', [
+            'eservices' => $eservices
+        ]);
     }
 
     /**
@@ -113,9 +115,10 @@ class EservicesController extends Controller
      * @param  \App\Models\EServices  $eServices
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Eservices $eServices)
+    public function destroy($id)
     {
-        //
+        Eservices::where('id', $id)->delete();
+        return redirect('/dashboard/eservices')->with('success', 'Data berhasil dihapus!');
     }
 
     public function download(Request $request)

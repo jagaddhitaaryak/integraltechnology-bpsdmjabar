@@ -68,9 +68,12 @@ class AplikasiController extends Controller
      * @param  \App\Models\Aplikasi  $aplikasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Aplikasi $aplikasi)
+    public function edit(Aplikasi $aplikasi, $id)
     {
-        //
+        $aplikasi = Aplikasi::find($id);
+        return view('dashboard.aplikasi.edit', [
+            'aplikasi' => $aplikasi
+        ]);
     }
 
     /**

@@ -39,6 +39,7 @@
                                             <th>Jumlah Peserta</th>
                                             <th>Jadwal Kegiatan</th>
                                             <th>Data Peserta</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     @if ($eservices->count() > 0)
@@ -47,12 +48,16 @@
                                                 <td>{{ Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
                                                 <td>{{ $data->nama_kegiatan }}</td>
                                                 <td>{{ $data->jml_peserta }}</td>
-                                                <form action="/" method="get">
-                                                    @csrf
-                                                    <td><a class="btn btn-sm btn-primary {{ $data->jadwal == null ? 'disabled' : '' }}" href="{{ 'public/files/jadwal-kegiatan/'. $data->jadwal }}"><i class="fa-solid fa-download"></i>  Download</a></td>
-                                                </form>
-                                                
+                                                <td><a class="btn btn-sm btn-primary {{ $data->jadwal == null ? 'disabled' : '' }}" href="{{ 'public/files/jadwal-kegiatan/'. $data->jadwal }}"><i class="fa-solid fa-download"></i>  Download</a></td>
                                                 <td><a class="btn btn-sm btn-primary {{ $data->data_peserta == null ? 'disabled' : '' }}" href="{{ public_path() . '/files/data-peserta/' . $data->data_peserta }}"><i class="fa-solid fa-download"></i>  Download</a></td>
+                                                <td>
+                                                    <a href="/dashboard/eservices/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                    <form action="/dashboard/eservices/delete/{{ $data->id }}" method="post" class="d-inline">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash"></i> Delete</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @else
