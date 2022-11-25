@@ -49,6 +49,9 @@
                                             <th>Link Sertifikat</th>
                                             <th>Foto Kegiatan</th>
                                             <th>Data Peserta</th>
+                                            @can('super_admin')
+                                            <th>Aksi</th>
+                                            @endcan
                                         </thead>
                                         @if ($webinar->count())
                                             @foreach ($webinar as $data)
@@ -58,8 +61,18 @@
                                                 <td>{{ $data->bidang_penyelenggara }}</td>
                                                 <td>{{ $data->jml_peserta }}</td>
                                                 <td>{{ $data->link_sertifikat }}</td>
-                                                <td><a class="btn btn-sm btn-primary {{ $data->foto_kegiatan == null ? 'disabled' : '' }}" href="{{ $data->foto_kegiatan }}"><i class="fa-solid fa-download"></i>  Download</a></td>
-                                                <td><a class="btn btn-sm btn-primary {{ $data->data_peserta == null ? 'disabled' : '' }}" href="{{ $data->data_peserta }}"><i class="fa-solid fa-download"></i>  Download</a></td>
+                                                <td><a class="btn btn-sm btn-primary {{ $data->foto_kegiatan == null ? 'disabled' : '' }}" href="{{ '/files/webinar/foto-kegiatan/' . $data->foto_kegiatan }}" download></i>  Download</a></td>
+                                                <td><a class="btn btn-sm btn-primary {{ $data->data_peserta == null ? 'disabled' : '' }}" href="{{ '/files/webinar/data-peserta/' . $data->data_peserta }}" download></i>  Download</a></td>
+                                                @can('super_admin')
+                                                <td>
+                                                    <a href="/dashboard/big-data/webinar/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                    <form action="/dashboard/big-data/delete/{{ $data->id }}" method="post" class="d-inline">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash"></i> Delete</button>
+                                                    </form>
+                                                </td>
+                                                @endcan
                                             </tr>
                                             @endforeach
                                         @else
@@ -97,8 +110,8 @@
                                                 <td>{{ $data->bidang_penyelenggara }}</td>
                                                 <td>{{ $data->jml_peserta }}</td>
                                                 <td>{{ $data->link_sertifikat }}</td>
-                                                <td><a class="btn btn-sm btn-primary {{ $data->foto_kegiatan == null ? 'disabled' : '' }}" href="{{ $data->foto_kegiatan }}"><i class="fa-solid fa-download"></i>  Download</a></td>
-                                                <td><a class="btn btn-sm btn-primary {{ $data->data_peserta == null ? 'disabled' : '' }}" href="{{ $data->data_peserta }}"><i class="fa-solid fa-download"></i>  Download</a></td>
+                                                <td><a class="btn btn-sm btn-primary {{ $data->foto_kegiatan == null ? 'disabled' : '' }}" href="{{ '/files/webinar/' . $data->foto_kegiatan }}" download></i>  Download</a></td>
+                                                <td><a class="btn btn-sm btn-primary {{ $data->data_peserta == null ? 'disabled' : '' }}" href="{{ '/files/webinar/' . $data->data_peserta }}" download></i>  Download</a></td>
                                             </tr>
                                             @endforeach
                                         @else
@@ -128,7 +141,7 @@
                                             <th>Foto Kegiatan</th>
                                             <th>Data Peserta</th>
                                         </thead>
-                                        @if ($sertifikasi->count())
+                                        @if ($sertifikasi->count() > 0)
                                             @foreach ($sertifikasi as $data)
                                             <tr>
                                                 <td>{{ Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>

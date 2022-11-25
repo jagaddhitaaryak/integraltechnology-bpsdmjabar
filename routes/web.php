@@ -51,21 +51,25 @@ Route::prefix('dashboard')->group(function () {
     Route::post('/aplikasi/tambah-data', [AplikasiController::class, 'store']);
     Route::get('/aplikasi/edit/{id}', [AplikasiController::class, 'edit']);
     Route::put('/aplikasi/update-data/{id}', [AplikasiController::class, 'update']);
+    Route::delete('/aplikasi/delete/{id}', [AplikasiController::class, 'destroy']);
 
     Route::get('/big-data', [BigDataController::class, 'index']);
     Route::get('/big-data/tambah-data', [BigDataController::class, 'create']);
 
-    Route::resource('/webinar', WebinarController::class)->middleware('auth');
-    Route::resource('/pelatihan', PelatihanController::class)->middleware('auth');
-    Route::resource('/sertifikasi', SertifikasiController::class)->middleware('auth');
+    Route::resource('/big-data/webinar', WebinarController::class)->middleware('auth');
+    Route::resource('/big-data/pelatihan', PelatihanController::class)->middleware('auth');
+    Route::resource('/big-data/sertifikasi', SertifikasiController::class)->middleware('auth');
 
     Route::get('/multimedia', [MultimediaController::class, 'index']);
     Route::get('/multimedia/tambah-data', [MultimediaController::class, 'create']);
     Route::post('/multimedia/tambah-data', [MultimediaController::class, 'store']);
     Route::get('/multimedia/edit/{id}', [MultimediaController::class, 'edit']);
+    Route::put('/multimedia/edit/{id}', [MultimediaController::class, 'update']);
+    Route::delete('/multimedia/delete/{id}', [MultimediaController::class, 'destroy']);
 
     Route::get('/publikasi', [PublikasiController::class, 'index']);
     Route::get('/publikasi/tambah-data', [PublikasiController::class, 'create']);
     Route::post('/publikasi/tambah-data', [PublikasiController::class, 'store']);
     Route::get('/publikasi/edit/{id}', [PublikasiController::class, 'edit']);
+    Route::delete('/publikasi/delete/{id}', [PublikasiController::class, 'destroy']);
 });

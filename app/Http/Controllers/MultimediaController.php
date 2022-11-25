@@ -85,9 +85,18 @@ class MultimediaController extends Controller
      * @param  \App\Models\Multimedia  $multimedia
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMultimediaRequest $request, Multimedia $multimedia)
+    public function update(Request $request, Multimedia $multimedia)
     {
-        //
+        // dd($request);
+        $rules = [
+            'tanggal' => 'required',
+            'nama_kegiatan' => 'required',
+            'link_video' => 'required'
+        ];
+        $validatedData = $request->validate($rules);
+        Multimedia::where('id', $multimedia->id)->update($validatedData);
+
+        return redirect('/dashboard/multimedia')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -96,8 +105,9 @@ class MultimediaController extends Controller
      * @param  \App\Models\Multimedia  $multimedia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Multimedia $multimedia)
+    public function destroy($id)
     {
-        //
+        Multimedia::where('id', $id)->delete();
+        return redirect('/dashboard/multimedia')->with('success', 'Data berhasil dihapus!');
     }
 }

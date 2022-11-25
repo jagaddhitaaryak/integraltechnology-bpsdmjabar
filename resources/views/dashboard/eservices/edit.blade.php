@@ -13,13 +13,12 @@
     @endif
     {{-- end success message --}}
 
-    @can('super_admin')
     {{-- input data area --}}
     <div class="col-lg-12">
         <h3>Edit Data</h3>
         <form action="/dashboard/eservices/edit/{{ $eservices->id }}" method="POST" enctype="multipart/form-data">
-            @csrf
             @method('put')
+            @csrf
             <!-- Date -->
             <label for="jumlah" class="form-label">Tanggal</label>
             <div class="input-group mb-3">
@@ -67,7 +66,6 @@
         </form>
     </div>
     {{-- end --}}
-    @endcan
 
 
 </section>

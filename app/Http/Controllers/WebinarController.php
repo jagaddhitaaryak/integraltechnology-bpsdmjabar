@@ -86,9 +86,12 @@ class WebinarController extends Controller
      * @param  \App\Models\Webinar  $webinar
      * @return \Illuminate\Http\Response
      */
-    public function edit(Webinar $webinar)
+    public function edit(Webinar $webinar, $id)
     {
-        //
+        $webinar = Webinar::find($id);
+        return view('dashboard.big-data.webinar.edit', [
+            'webinar' => $webinar
+        ]);
     }
 
     /**

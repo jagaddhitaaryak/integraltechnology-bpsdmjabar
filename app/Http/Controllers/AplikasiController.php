@@ -94,8 +94,9 @@ class AplikasiController extends Controller
      * @param  \App\Models\Aplikasi  $aplikasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Aplikasi $aplikasi)
+    public function destroy($id)
     {
-        //
+        Aplikasi::where('id', $id)->delete();
+        return redirect('/dashboard/aplikasi')->with('success', 'Data berhasil dihapus!');
     }
 }

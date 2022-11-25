@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Eservices;
-use Illuminate\Auth\Access\Response;
-use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Http\Request;
 
 class EservicesController extends Controller
@@ -52,7 +50,6 @@ class EservicesController extends Controller
         ]);
 
         if ($request->file('jadwal')) {
-            // $validatedData['jadwal'] = $request->file('jadwal')->store('file/jadwal-kegiatan');
             $path = public_path() . '/files/jadwal-kegiatan/';
 
             $validatedData['jadwal'] = $request->file('jadwal')->getClientOriginalName();
@@ -104,9 +101,36 @@ class EservicesController extends Controller
      * @param  \App\Models\EServices  $eServices
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EServices $eServices)
+    public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'tanggal' => 'required',
+            'nama_kegiatan' => 'required',
+            'jml_peserta' => 'required',
+            'jadwal' => 'file | mimes:pdf',
+            'data_peserta' => 'file | mimes:pdf'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        // if ($request->file('jadwal')) {
+        //     $path = public_path() . '/files/jadwal-kegiatan/';
+
+        //     $validatedData['jadwal'] = $request->file('jadwal')->getClientOriginalName();
+        //     $request->file('jadwal')->move($path, $validatedData['jadwal']);
+        // }
+
+        // if ($request->file('data_peserta')) {
+        //     $path = public_path() . '/files/data-peserta/';
+
+        //     $validatedData['data_peserta'] = $request->file('data_peserta')->getClientOriginalName();
+        //     $request->file('data_peserta')->move($path, $validatedData['data_peserta']);
+        // }
+
+        Eservices::where('id', $id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/eservices')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -119,12 +143,5 @@ class EservicesController extends Controller
     {
         Eservices::where('id', $id)->delete();
         return redirect('/dashboard/eservices')->with('success', 'Data berhasil dihapus!');
-    }
-
-    public function download(Request $request)
-    {
-        $path = public_path() . "/files/data-peserta" . $request->file();
-
-        return response()->download($path);
     }
 }

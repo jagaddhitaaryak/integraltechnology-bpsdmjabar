@@ -98,8 +98,9 @@ class PublikasiController extends Controller
      * @param  \App\Models\Publikasi  $publikasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publikasi $publikasi)
+    public function destroy($id)
     {
-        //
+        Publikasi::where('id', $id)->delete();
+        return redirect('/dashboard/publikasi')->with('success', 'Data berhasil dihapus!');
     }
 }

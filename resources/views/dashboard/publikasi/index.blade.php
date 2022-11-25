@@ -39,7 +39,9 @@
                                             <th>Judul Flyer</th>
                                             <th>Link Publikasi Internal</th>
                                             <th>Link Publikasi External</th>
+                                            @can('super_admin')
                                             <th>Aksi</th>
+                                            @endcan
                                         </tr>
                                     </thead>
                                     @if ($publikasi->count() > 0)
@@ -50,10 +52,16 @@
                                                 <td>{{ $data->judul_flyer }}</td>
                                                 <td>{{ $data->link_pub_intern }}</td>
                                                 <td>{{ $data->link_pub_extern }}</td>
+                                                @can('super_admin')
                                                 <td>
                                                     <a href="/dashboard/publikasi/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-                                                    <a href="" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Delete</a>
+                                                    <form action="/dashboard/publikasi/delete/{{ $data->id }}" method="post" class="d-inline">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash"></i> Delete</button>
+                                                    </form>
                                                 </td>
+                                                @endcan
                                             </tr>
                                         @endforeach
                                     @else

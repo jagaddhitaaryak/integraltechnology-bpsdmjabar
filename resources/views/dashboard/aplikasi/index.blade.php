@@ -36,7 +36,9 @@
                                         <th>Nama Aplikasi</th>
                                         <th>Link Aplikasi</th>
                                         <th>Deskripsi Aplikasi</th>
+                                        @can('super_admin')
                                         <th>Aksi</th>
+                                        @endcan
                                     </thead>
                                     @if ($aplikasi->count() > 0)
                                         @foreach ($aplikasi as $data)
@@ -44,10 +46,16 @@
                                             <td>{{ $data->nama_apl }}</td>
                                             <td>{{ $data->link_apl }}</td>
                                             <td>{{ $data->desc_apl }}</td>
+                                            @can('super_admin')
                                             <td>
                                                 <a href="/dashboard/aplikasi/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i> Delete</a>
+                                                <form action="/dashboard/aplikasi/delete/{{ $data->id }}" method="post" class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash"></i> Delete</button>
+                                                </form>
                                             </td>
+                                            @endcan
                                         </tr>
                                         @endforeach
                                     @else
