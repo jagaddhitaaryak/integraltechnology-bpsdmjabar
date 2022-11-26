@@ -17,7 +17,7 @@
     {{-- input data area --}}
     <div class="col-lg-12">
         <h3>Input Data</h3>
-        <form action="/dashboard/multimedia/edit/{id}" method="POST">
+        <form action="/dashboard/multimedia/{{ $multimedia->id }}" method="POST">
             @method('put')
             @csrf
             <!-- Date -->

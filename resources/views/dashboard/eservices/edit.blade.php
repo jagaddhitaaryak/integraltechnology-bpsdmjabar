@@ -16,7 +16,7 @@
     {{-- input data area --}}
     <div class="col-lg-12">
         <h3>Edit Data</h3>
-        <form action="/dashboard/eservices/edit/{{ $eservices->id }}" method="POST" enctype="multipart/form-data">
+        <form action="/dashboard/eservices/{{ $eservices->id }}" method="POST" enctype="multipart/form-data">
             @method('put')
             @csrf
             <!-- Date -->

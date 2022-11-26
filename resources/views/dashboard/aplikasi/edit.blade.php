@@ -17,9 +17,9 @@
     {{-- input data area --}}
     <div class="col-lg-12">
         <h3>Edit Data</h3>
-        <form action="/dashboard/aplikasi/tambah-data" method="POST" enctype="multipart/form-data">
-            @csrf
+        <form action="/dashboard/aplikasi/{{ $aplikasi->id }}" method="POST" enctype="multipart/form-data">
             @method('put')
+            @csrf
             <!-- Nama Kegiatan -->
             <label for="namaApl" class="form-label">Nama Aplikasi</label>
             <div class="input-group mb-3">

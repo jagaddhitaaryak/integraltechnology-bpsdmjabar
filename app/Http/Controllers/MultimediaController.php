@@ -85,18 +85,17 @@ class MultimediaController extends Controller
      * @param  \App\Models\Multimedia  $multimedia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Multimedia $multimedia)
+    public function update(Request $request, $id)
     {
-        // dd($request);
         $rules = [
             'tanggal' => 'required',
             'nama_kegiatan' => 'required',
             'link_video' => 'required'
         ];
         $validatedData = $request->validate($rules);
-        Multimedia::where('id', $multimedia->id)->update($validatedData);
+        Multimedia::where('id', $id)->update($validatedData);
 
-        return redirect('/dashboard/multimedia')->with('success', 'Data berhasil diubah!');
+        return redirect('/dashboard/multimedia')->with('success', 'Data Multimedia berhasil diubah!');
     }
 
     /**

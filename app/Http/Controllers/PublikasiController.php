@@ -87,9 +87,19 @@ class PublikasiController extends Controller
      * @param  \App\Models\Publikasi  $publikasi
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePublikasiRequest $request, Publikasi $publikasi)
+    public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'tanggal' => 'required',
+            'nama_kegiatan' => 'required',
+            'judul_flyer' => 'required',
+            'link_pub_intern' => 'required',
+            'link_pub_extern' => 'required'
+        ];
+        $validatedData = $request->validate($rules);
+        Publikasi::where('id', $id)->update($validatedData);
+
+        return redirect('/dashboard/publikasi')->with('success', 'Data Publikasi berhasil diubah!');
     }
 
     /**

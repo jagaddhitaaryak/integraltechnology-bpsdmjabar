@@ -17,7 +17,8 @@
     {{-- input data area --}}
     <div class="col-lg-12">
         <h3>Edit Data</h3>
-        <form action="/dashboard/publikasi/edit/{{ $publikasi->id }}" method="POST" enctype="multipart/form-data">
+        <form action="/dashboard/publikasi/{{ $publikasi->id }}" method="POST" enctype="multipart/form-data">
+            @method('put')
             @csrf
             <!-- Date -->
             <label for="tanggal" class="form-label">Tanggal</label>

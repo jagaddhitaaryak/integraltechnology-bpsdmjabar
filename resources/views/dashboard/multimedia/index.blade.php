@@ -51,7 +51,7 @@
                                                 <td>{{ $data->link_video }}</td>
                                                 @can('super_admin')
                                                 <td>
-                                                    <a href="/dashboard/multimedia/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                    <a href="/dashboard/multimedia/{{ $data->id }}/edit" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
                                                     <form action="/dashboard/multimedia/delete/{{ $data->id }}" method="post" class="d-inline">
                                                         @method('delete')
                                                         @csrf

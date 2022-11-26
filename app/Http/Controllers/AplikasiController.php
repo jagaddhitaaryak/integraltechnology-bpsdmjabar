@@ -83,9 +83,26 @@ class AplikasiController extends Controller
      * @param  \App\Models\Aplikasi  $aplikasi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Aplikasi $aplikasi)
+    public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'nama_apl' => 'required',
+            'link_apl' => 'required',
+            'desc_apl' => 'required'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        // if (file('jadwal')) {
+        //     file('jadwal');
+        // } else {
+        //     $request->file('jadwal') = $request->file('jadwal');
+        // }
+
+        Aplikasi::where('id', $id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/aplikasi')->with('success', 'Data Aplikasi berhasil diubah!');
     }
 
     /**

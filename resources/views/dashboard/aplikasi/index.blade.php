@@ -48,7 +48,7 @@
                                             <td>{{ $data->desc_apl }}</td>
                                             @can('super_admin')
                                             <td>
-                                                <a href="/dashboard/aplikasi/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                <a href="/dashboard/aplikasi/{{ $data->id }}/edit" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
                                                 <form action="/dashboard/aplikasi/delete/{{ $data->id }}" method="post" class="d-inline">
                                                     @method('delete')
                                                     @csrf

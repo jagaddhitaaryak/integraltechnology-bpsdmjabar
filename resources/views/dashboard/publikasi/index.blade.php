@@ -54,7 +54,7 @@
                                                 <td>{{ $data->link_pub_extern }}</td>
                                                 @can('super_admin')
                                                 <td>
-                                                    <a href="/dashboard/publikasi/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                    <a href="/dashboard/publikasi/{{ $data->id }}/edit" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
                                                     <form action="/dashboard/publikasi/delete/{{ $data->id }}" method="post" class="d-inline">
                                                         @method('delete')
                                                         @csrf

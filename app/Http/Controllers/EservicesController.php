@@ -113,24 +113,30 @@ class EservicesController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        // if ($request->file('jadwal')) {
-        //     $path = public_path() . '/files/jadwal-kegiatan/';
-
-        //     $validatedData['jadwal'] = $request->file('jadwal')->getClientOriginalName();
-        //     $request->file('jadwal')->move($path, $validatedData['jadwal']);
+        // if (file('jadwal')) {
+        //     file('jadwal');
+        // } else {
+        //     $request->file('jadwal') = $request->file('jadwal');
         // }
 
-        // if ($request->file('data_peserta')) {
-        //     $path = public_path() . '/files/data-peserta/';
+        if ($request->file('jadwal')) {
+            $path = public_path() . '/files/jadwal-kegiatan/';
 
-        //     $validatedData['data_peserta'] = $request->file('data_peserta')->getClientOriginalName();
-        //     $request->file('data_peserta')->move($path, $validatedData['data_peserta']);
-        // }
+            $validatedData['jadwal'] = $request->file('jadwal')->getClientOriginalName();
+            $request->file('jadwal')->move($path, $validatedData['jadwal']);
+        }
+
+        if ($request->file('data_peserta')) {
+            $path = public_path() . '/files/data-peserta/';
+
+            $validatedData['data_peserta'] = $request->file('data_peserta')->getClientOriginalName();
+            $request->file('data_peserta')->move($path, $validatedData['data_peserta']);
+        }
 
         Eservices::where('id', $id)
             ->update($validatedData);
 
-        return redirect('/dashboard/eservices')->with('success', 'Data berhasil diubah!');
+        return redirect('/dashboard/eservices')->with('success', 'Data E-Services berhasil diubah!');
     }
 
     /**
