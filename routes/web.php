@@ -56,7 +56,12 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/big-data', [BigDataController::class, 'index']);
     Route::get('/big-data/tambah-data', [BigDataController::class, 'create']);
 
-    Route::resource('/big-data/webinar', WebinarController::class)->middleware('auth');
+    Route::get('/big-data/webinar/tambah-data', [WebinarController::class, 'create']);
+    Route::post('/big-data/webinar/tambah-data', [WebinarController::class, 'store']);
+    Route::get('/big-data/webinar/{id}/edit', [WebinarController::class, 'edit']);
+    Route::put('/big-data/webinar/{id}', [WebinarController::class, 'update']);
+    Route::delete('/big-data/webinar/{id}', [WebinarController::class, 'destroy']);
+
     Route::resource('/big-data/pelatihan', PelatihanController::class)->middleware('auth');
     Route::resource('/big-data/sertifikasi', SertifikasiController::class)->middleware('auth');
 

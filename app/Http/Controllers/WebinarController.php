@@ -66,7 +66,7 @@ class WebinarController extends Controller
 
         Webinar::create($validatedData);
 
-        return redirect('/dashboard/big-data')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/dashboard/big-data')->with('success', 'Data Webinar berhasil ditambahkan!');
     }
 
     /**
@@ -101,9 +101,21 @@ class WebinarController extends Controller
      * @param  \App\Models\Webinar  $webinar
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWebinarRequest $request, Webinar $webinar)
+    public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'tanggal' => 'required',
+            'nama_kegiatan' => 'required',
+            'bidang_penyelenggara' => 'required',
+            'jml_peserta' => 'required',
+            'link_sertifikat' => 'required',
+            'foto_kegiatan' => 'file | mimes:pdf',
+            'data_peserta' => 'file | mimes:pdf'
+        ];
+        $validatedData = $request->validate($rules);
+        Webinar::where('id', $id)->update($validatedData);
+
+        return redirect('/dashboard/big-data')->with('success', 'Data Webinar berhasil diubah!');
     }
 
     /**
@@ -112,8 +124,9 @@ class WebinarController extends Controller
      * @param  \App\Models\Webinar  $webinar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Webinar $webinar)
+    public function destroy($id)
     {
-        //
+        Webinar::where('id', $id)->delete();
+        return redirect('/dashboard/big-data')->with('success', 'Data berhasil dihapus!');
     }
 }

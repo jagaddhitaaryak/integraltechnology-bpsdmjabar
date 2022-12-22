@@ -65,7 +65,7 @@
                                                 <td><a class="btn btn-sm btn-primary {{ $data->data_peserta == null ? 'disabled' : '' }}" href="{{ '/files/webinar/data-peserta/' . $data->data_peserta }}" download></i>  Download</a></td>
                                                 @can('super_admin')
                                                 <td>
-                                                    <a href="/dashboard/big-data/webinar/edit/{{ $data->id }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                    <a href="/dashboard/big-data/webinar/{{ $data->id }}/edit" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
                                                     <form action="/dashboard/big-data/delete/{{ $data->id }}" method="post" class="d-inline">
                                                         @method('delete')
                                                         @csrf

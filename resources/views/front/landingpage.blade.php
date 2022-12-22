@@ -81,9 +81,8 @@
                 </div>
                 <div class="col-lg-5 mt-3">
                     <h1 class="head-title text-light fw-bold mb-5">Integral Technology</h2>
-                        <p class="text-light fs-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et ex hic
-                            aperiam asperiores maiores dolore eveniet eligendi in reiciendis unde consequatur est
-                            officiis, ipsa odit qui cumque necessitatibus laboriosam iste.
+                        <p class="text-light fs-5">Aplikasi Penyimpanan data berbasis website yang dibuat untuk merekap laporan dari seluruh 
+                            kegiatan pegawai ASN & Non ASN di BPSDM Jawa Barat
                         </p>
                 </div>
             </div>
@@ -100,11 +99,9 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-5 text-center">
                     <h1 class="head-tittle text-dark mb-4 fw-bold text-left mt-4">Apa itu Integral Technology?</h1>
-                    <p class="fs-5 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi at
-                        dolorum, laboriosam aliquid, perspiciatis in tempora quis nulla architecto eveniet doloribus
-                        corporis incidunt vitae? Soluta, animi provident officia pariatur sequi illo error accusantium
-                        hic magnam ipsa sit, id doloremque? Vero, omnis possimus tenetur laborum ratione dicta explicabo
-                        aspernatur consequuntur eaque.</p>
+                    <p class="fs-5 text-justify"><b>Integral Technology</b> adalah aplikasi penyimpanan data berbasis website yang dibuat untuk
+                        merekap laporan dari seluruh kegiatan pegawai ASN & Non ASN di BPSDM Provinsi Jawa Barat.
+                    </p>
                 </div>
                 <div class="col-lg-6 up-down text-center">
                     <img src="/img/about.png" alt="" width="90%" height="100%" class="m-img">

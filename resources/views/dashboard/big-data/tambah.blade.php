@@ -25,7 +25,7 @@
                     {{-- webinar --}}
                     <div class="tab-pane fade show active" id="nav-webinar" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
                         <div class="col-12 py-3 bg-dark">
-                            <form action="/dashboard/webinar" method="post" enctype="multipart/form-data">
+                            <form action="/dashboard/big-data/webinar/tambah-data" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <!-- Date -->
                                 <label for="" class="form-label">Tanggal</label>
